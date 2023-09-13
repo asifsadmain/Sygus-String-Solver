@@ -1,4 +1,18 @@
 import openai
+from datetime import datetime
+import logging
+import os
+from utils import *
+from sygus_parser import StrParser
+from itertools import product
+import sys
+import re
+from sygus_string_dsl import *
+
+
+PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
+config_directory = "../config/"
+logs_directory = "../logs/"
 
 def get_response_from_api(user_message):
     openai.api_key = "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"
@@ -22,78 +36,119 @@ def get_response_from_api(user_message):
 
     return response['choices'][0]['message']['content']
 
+def construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples):
+    str_var = ""
+    str_lit = ""
+    int_var = ""
+    int_lit = ""
 
-DSL = f"""
-I have the following CFG for string manipulation task:
+    vars_and_lits = ""
+    io_examples = ""
 
-CFG:
-```
-Start —> S
-S —> arg0 | "" | " " | "US" | "CAN" | (replace S S S) | (concat S S) | (substr S I I) | (ite B S S) | (int.to.str I) | (at S I)
-B —> true | false | (= I I) | (contains S S) | (suffixof S S) | (prefixof S S)
-I —> 1 | 0 | -1 | (str.to.int S) | (+ I I) | (-I I) | (length S) | (ite B I I) | (indexof S S I)
-```
-"""
+    if (string_variables):
+        vars_and_lits += ', '.join(string_variables) + ": String Variable(s)\n    "
+        str_var = ' | '.join(string_variables) + ' | '
+    if (string_literals):
+        vars_and_lits += ', '.join(map(repr, string_literals)) + ": String Literal(s)\n    "
+        str_lit = ' | '.join(map(repr, string_literals)) + ' | '
+    if (integer_variables):
+        vars_and_lits += ', '.join(integer_variables) + ": Integer Variable(s)\n    "
+        int_var = ' | '.join(integer_variables) + ' | '
+    if (integer_literals):
+        vars_and_lits += ', '.join(map(repr, integer_literals)) + ": Integer Literal(s)\n    "
+        int_lit = ' | '.join(map(repr, integer_literals)) + ' | '
 
-DSL_explanation = f"""
-Here is the explanation of the above CFG:
+    for i in range(len(input_output_examples)):
+        formatted_pairs = [f'{key}: {value}' for key, value in input_output_examples[i].items()]
+        io_examples += str((i+1)) + ". " + ', '.join(formatted_pairs) + "\n    "
 
-CFG Explanation:
-```
-arg0: string variables
-"", " ", "US", "CAN": string literals
-1, 0, -1: integer literals
-true, false: boolean literals
-replace S S S: replace s x y, replaces first occurrence of substring x in string s with substring y
-concat S S: concat x y, concatenates string x and string y
-substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
-ite B S S: ite x y z, returns string y if x is true, otherwise string z
-int.to.str I: int.to.str x, converts int x to a string
-at S I: at x, y returns the character at index y in string x
-= I I: = x y, returns true if x equals y
-contains S S: contains x y, returns true if string x equals string y
-suffixof S S: suffixof x y, returns true if string x is the suffix of string y
-prefixof S S: prefixof x y, returns true if string x is the prefix of string y
-str.to.int S: str.to.int x, converts string x to an integer
-+ I I: + x y, sums integer x and integer y
-- I I: - y y, subtracts integer y from integer x
-length S: length x, returns length of string x
-ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
-indexof S S I: indexof x y z, returns index of y in x, starting at index z
-```
-"""
+    DSL = f"""
+    I have the following CFG for string manipulation task:
 
-constraints = f"""
-Now I am providing some examples. Each example contains one or many inputs and an output. Here are the examples:
+    CFG:
+    ```
+    Start —> S
+    S —> {str_var}{str_lit}(replace S S S) | (concat S S) | (substr S I I) | (ite B S S) | (int.to.str I) | (at S I)
+    B —> true | false | (= I I) | (contains S S) | (suffixof S S) | (prefixof S S)
+    I —> {int_var}{int_lit}(str.to.int S) | (+ I I) | (-I I) | (length S) | (ite B I I) | (indexof S S I)
+    ```
+    """
 
-Example 1:
-```
-input: Mining US
-output: Mining
-```
-Example 2:
-```
-input: Soybean Farming CAN
-output: Soybean Farming
-```
-Example 3:
-```
-input: Soybean Farming
-output: Soybean Farming
-```
-Example 4:
-```
-input: Oil Extraction US
-output: Oil Extraction
-```
-Example 5:
-```
-input: Fishing
-output: Fishing
-```
-"""
+    DSL_explanation = f"""
+    Here is the explanation of the above CFG:
 
-user_message = DSL + DSL_explanation + constraints
+    CFG Explanation:
+    ```
+    {vars_and_lits}true, false: boolean literals
+    replace S S S: replace s x y, replaces first occurrence of substring x in string s with substring y
+    concat S S: concat x y, concatenates string x and string y
+    substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
+    ite B S S: ite x y z, returns string y if x is true, otherwise string z
+    int.to.str I: int.to.str x, converts int x to a string
+    at S I: at x, y returns the character at index y in string x
+    = I I: = x y, returns true if x equals y
+    contains S S: contains x y, returns true if string x equals string y
+    suffixof S S: suffixof x y, returns true if string x is the suffix of string y
+    prefixof S S: prefixof x y, returns true if string x is the prefix of string y
+    str.to.int S: str.to.int x, converts string x to an integer
+    + I I: + x y, sums integer x and integer y
+    - I I: - y y, subtracts integer y from integer x
+    length S: length x, returns length of string x
+    ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
+    indexof S S I: indexof x y z, returns index of y in x, starting at index z
+    ```
+    """
+
+    constraints = f"""
+    Now I am providing {len(input_output_examples)} examples. Each example contains the input to the string and/or integer argument(s) \
+    and an output (out). Here are the examples:
+
+    {io_examples}
+    """
+
+    user_message = DSL + DSL_explanation + constraints
+
+    return user_message
+
+
+slurm_task_id = sys.argv[1]
+TaskId = int(slurm_task_id) - 1
+
+with open(config_directory+"sygus_string_benchmarks.txt") as f:
+    benchmarks = f.read().splitlines()
+
+    string_variables = []
+    string_literals = []
+    integer_variables = []
+    integer_literals = []
+
+    benchmark = None
+    filename = benchmarks[TaskId]
+    print("filename =", filename)
+
+    benchmark = filename
+
+    specification_parser = StrParser(benchmark)
+    specifications = specification_parser.parse()
+    logging.info("\n")
+
+    string_variables = specifications[0]
+    string_literals = specifications[1]
+    integer_variables = specifications[2]
+    integer_literals = specifications[3]
+    
+    input_output_examples = specifications[4]
+
+user_message = construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples)
 
 response = get_response_from_api(user_message)
-print(response)
+# print(response)
+
+# Define a regular expression pattern to match text inside <program></program> tags
+pattern = r'<program>(.*?)<\/program>'
+
+# Use re.findall to find all matches of the pattern in the input string
+matches = re.findall(pattern, response, re.DOTALL)
+
+# Print the extracted text
+print(matches[0].strip())
