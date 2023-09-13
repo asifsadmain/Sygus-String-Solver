@@ -44,21 +44,21 @@ arg0: string variables
 "", " ", "US", "CAN": string literals
 1, 0, -1: integer literals
 true, false: boolean literals
-replace S S S: replace s x y, replaces first occurrence of x in s with y
-concat S S: concat x y, concatenates x and y
-substr S I I: substr x y z, extracts substring of length z, from index y
-ite B S S: ite x y z, returns y if x is true, otherwise z
-int.to.str I: int.to.str x converts int x to a string
+replace S S S: replace s x y, replaces first occurrence of substring x in string s with substring y
+concat S S: concat x y, concatenates string x and string y
+substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
+ite B S S: ite x y z, returns string y if x is true, otherwise string z
+int.to.str I: int.to.str x, converts int x to a string
 at S I: at x, y returns the character at index y in string x
 = I I: = x y, returns true if x equals y
-contains S S: contains x y, returns true if x equals y
-suffixof S S: suffixof x y, returns true if x is the suffix of y
-prefixof S S: prefixof x y, returns true if x is the prefix of y
+contains S S: contains x y, returns true if string x equals string y
+suffixof S S: suffixof x y, returns true if string x is the suffix of string y
+prefixof S S: prefixof x y, returns true if string x is the prefix of string y
 str.to.int S: str.to.int x, converts string x to an integer
-+ I I: + x y, sums x and y
-- I I: - y y, subtracts y from x
-length S: length x, returns length of x
-ite B I I: ite x y z, returns y if x is true, otherwise x
++ I I: + x y, sums integer x and integer y
+- I I: - y y, subtracts integer y from integer x
+length S: length x, returns length of string x
+ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
 indexof S S I: indexof x y z, returns index of y in x, starting at index z
 ```
 """
