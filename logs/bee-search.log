@@ -1,0 +1,1489 @@
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223632
+[Task: 1] 2023-03-16 09:13:19.601399
+[Task: 1] Time taken: 0:00:22.169570
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 47994
+[Task: 8] 2023-03-16 09:21:00.917401
+[Task: 8] Time taken: 0:00:06.711829
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20705
+[Task: 56] 2023-03-16 09:24:08.729007
+[Task: 56] Time taken: 0:00:02.966595
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((_arg_0.IndexOf(".") * -1),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29437
+[Task: 57] 2023-03-16 09:24:18.585593
+[Task: 57] Time taken: 0:00:05.826431
+[Task: 57] Number of calls to heapify: 1029
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8128
+[Task: 100] 2023-03-16 09:24:46.461680
+[Task: 100] Time taken: 0:00:02.273273
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160192
+[Task: 132] 2023-03-16 09:25:49.660936
+[Task: 132] Time taken: 0:00:11.089178
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 299441
+[Task: 172] 2023-03-16 09:26:46.398022
+[Task: 172] Time taken: 0:00:19.870813
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.3f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223317
+[Task: 1] 2023-03-16 11:00:12.187711
+[Task: 1] Time taken: 0:00:56.121488
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48159
+[Task: 8] 2023-03-16 11:07:54.053469
+[Task: 8] Time taken: 0:00:09.290376
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20705
+[Task: 56] 2023-03-16 11:11:06.259987
+[Task: 56] Time taken: 0:00:07.987538
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29424
+[Task: 57] 2023-03-16 11:11:22.588677
+[Task: 57] Time taken: 0:00:12.275415
+[Task: 57] Number of calls to heapify: 8614
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8188
+[Task: 100] 2023-03-16 11:11:50.939082
+[Task: 100] Time taken: 0:00:02.600684
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 11:13:12.456188
+[Task: 132] Time taken: 0:00:29.796351
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298325
+[Task: 172] 2023-03-16 11:14:23.679784
+[Task: 172] Time taken: 0:00:33.996169
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.4f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223328
+[Task: 1] 2023-03-16 11:23:33.073807
+[Task: 1] Time taken: 0:01:43.071553
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 11:23:45.104356
+[Task: 8] Time taken: 0:00:09.773888
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20705
+[Task: 56] 2023-03-16 11:23:58.511837
+[Task: 56] Time taken: 0:00:11.213283
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29409
+[Task: 57] 2023-03-16 11:24:16.830317
+[Task: 57] Time taken: 0:00:16.176745
+[Task: 57] Number of calls to heapify: 14201
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 11:24:21.612130
+[Task: 100] Time taken: 0:00:02.601410
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 11:25:03.534974
+[Task: 132] Time taken: 0:00:39.766622
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298325
+[Task: 172] 2023-03-16 11:25:42.000428
+[Task: 172] Time taken: 0:00:36.281888
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.5f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 11:29:48.500746
+[Task: 1] Time taken: 0:01:45.481379
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 11:30:00.632240
+[Task: 8] Time taken: 0:00:09.829104
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20705
+[Task: 56] 2023-03-16 11:30:15.894090
+[Task: 56] Time taken: 0:00:13.073987
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29409
+[Task: 57] 2023-03-16 11:30:36.075629
+[Task: 57] Time taken: 0:00:17.964989
+[Task: 57] Number of calls to heapify: 16238
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 11:30:41.307284
+[Task: 100] Time taken: 0:00:02.967783
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 11:31:29.113983
+[Task: 132] Time taken: 0:00:45.573146
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 11:32:11.683118
+[Task: 172] Time taken: 0:00:40.284693
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.6f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 11:51:55.192778
+[Task: 1] Time taken: 0:01:50.087645
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 11:52:07.316382
+[Task: 8] Time taken: 0:00:09.894307
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20705
+[Task: 56] 2023-03-16 11:52:21.109447
+[Task: 56] Time taken: 0:00:11.580985
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 11:52:39.971309
+[Task: 57] Time taken: 0:00:16.699152
+[Task: 57] Number of calls to heapify: 17805
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 11:52:44.825039
+[Task: 100] Time taken: 0:00:02.646302
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 11:53:29.213496
+[Task: 132] Time taken: 0:00:42.224062
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 11:54:10.783215
+[Task: 172] Time taken: 0:00:39.375956
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.7f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 12:03:49.860994
+[Task: 1] Time taken: 0:02:04.461204
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 12:04:02.730105
+[Task: 8] Time taken: 0:00:10.596304
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20645
+[Task: 56] 2023-03-16 12:04:17.852331
+[Task: 56] Time taken: 0:00:12.858797
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 12:04:39.125873
+[Task: 57] Time taken: 0:00:18.978751
+[Task: 57] Number of calls to heapify: 20042
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 12:04:44.098972
+[Task: 100] Time taken: 0:00:02.760994
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 12:05:34.692419
+[Task: 132] Time taken: 0:00:48.350141
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 12:06:19.755707
+[Task: 172] Time taken: 0:00:42.853341
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.8f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 12:17:54.245527
+[Task: 1] Time taken: 0:02:11.123634
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 12:18:07.692701
+[Task: 8] Time taken: 0:00:11.174127
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20645
+[Task: 56] 2023-03-16 12:18:23.487389
+[Task: 56] Time taken: 0:00:13.621271
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 12:18:45.738682
+[Task: 57] Time taken: 0:00:20.081044
+[Task: 57] Number of calls to heapify: 20098
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 12:18:50.884876
+[Task: 100] Time taken: 0:00:02.982209
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 12:20:57.447467
+[Task: 132] Time taken: 0:02:04.410550
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 12:21:42.411934
+[Task: 172] Time taken: 0:00:42.684657
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.9f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 12:35:40.949438
+[Task: 1] Time taken: 0:01:56.165988
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 12:35:53.413503
+[Task: 8] Time taken: 0:00:10.065697
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20645
+[Task: 56] 2023-03-16 12:36:08.784769
+[Task: 56] Time taken: 0:00:13.024824
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 12:36:28.920110
+[Task: 57] Time taken: 0:00:17.874074
+[Task: 57] Number of calls to heapify: 20098
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 12:36:33.979198
+[Task: 100] Time taken: 0:00:02.772215
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 12:37:19.362761
+[Task: 132] Time taken: 0:00:43.215607
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 12:38:00.805605
+[Task: 172] Time taken: 0:00:39.272467
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.10f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223314
+[Task: 1] 2023-03-16 12:41:15.204734
+[Task: 1] Time taken: 0:01:54.687169
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 12:41:27.667849
+[Task: 8] Time taken: 0:00:09.872786
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20645
+[Task: 56] 2023-03-16 12:41:41.792714
+[Task: 56] Time taken: 0:00:11.906756
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 12:42:01.395899
+[Task: 57] Time taken: 0:00:17.481297
+[Task: 57] Number of calls to heapify: 20098
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 12:42:06.218883
+[Task: 100] Time taken: 0:00:02.642077
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 12:42:51.657062
+[Task: 132] Time taken: 0:00:43.265668
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 12:43:33.191389
+[Task: 172] Time taken: 0:00:39.316814
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+----------------------------.15f---------------------------
+
+
+[Task: 1] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Creating converter from 7 to 5
+[Task: 1] Creating converter from 5 to 7
+[Task: 1] Initializing MLIR with module: _site_initialize_0
+[Task: 1] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 1] etils.epath was not found. Using pathlib for file I/O.
+[Task: 1] Creating converter from 3 to 5
+[Task: 1] 
+
+[Task: 1] Benchmark: 11604909.sl
+[Task: 1] Result: Success
+[Task: 1] Program: _arg_0.Substr((_arg_0.IndexOf(".") + -1),((1 + 1) + _arg_0.IndexOf(".")))
+[Task: 1] Number of evaluations: 223320
+[Task: 1] 2023-03-16 12:53:39.153261
+[Task: 1] Time taken: 0:02:03.938393
+[Task: 1] Number of calls to heapify: 0
+[Task: 1] 
+
+
+[Task: 8] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Creating converter from 7 to 5
+[Task: 8] Creating converter from 5 to 7
+[Task: 8] Initializing MLIR with module: _site_initialize_0
+[Task: 8] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 8] etils.epath was not found. Using pathlib for file I/O.
+[Task: 8] Creating converter from 3 to 5
+[Task: 8] 
+
+[Task: 8] Benchmark: 25239569.sl
+[Task: 8] Result: Success
+[Task: 8] Program: _arg_0.replace("DRS", "Direct Response").replace("BRD", "Branding").replace("LDS", "Leads")
+[Task: 8] Number of evaluations: 48027
+[Task: 8] 2023-03-16 12:53:51.538895
+[Task: 8] Time taken: 0:00:10.039940
+[Task: 8] Number of calls to heapify: 0
+[Task: 8] 
+
+
+[Task: 56] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Creating converter from 7 to 5
+[Task: 56] Creating converter from 5 to 7
+[Task: 56] Initializing MLIR with module: _site_initialize_0
+[Task: 56] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 56] etils.epath was not found. Using pathlib for file I/O.
+[Task: 56] Creating converter from 3 to 5
+[Task: 56] 
+
+[Task: 56] Benchmark: exceljet1.sl
+[Task: 56] Result: Success
+[Task: 56] Program: _arg_1.Substr((_arg_1.IndexOf("_") + 1),_arg_1.Length())
+[Task: 56] Number of evaluations: 20645
+[Task: 56] 2023-03-16 12:54:06.256444
+[Task: 56] Time taken: 0:00:12.489139
+[Task: 56] Number of calls to heapify: 0
+[Task: 56] 
+
+
+[Task: 57] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Creating converter from 7 to 5
+[Task: 57] Creating converter from 5 to 7
+[Task: 57] Initializing MLIR with module: _site_initialize_0
+[Task: 57] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 57] etils.epath was not found. Using pathlib for file I/O.
+[Task: 57] Creating converter from 3 to 5
+[Task: 57] 
+
+[Task: 57] Benchmark: exceljet2.sl
+[Task: 57] Result: Success
+[Task: 57] Program: _arg_0.Substr((-1 - (1 + 1)),_arg_0.Length()).replace(".", "")
+[Task: 57] Number of evaluations: 29397
+[Task: 57] 2023-03-16 12:54:26.232865
+[Task: 57] Time taken: 0:00:17.783992
+[Task: 57] Number of calls to heapify: 24725
+[Task: 57] 
+
+
+[Task: 100] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Creating converter from 7 to 5
+[Task: 100] Creating converter from 5 to 7
+[Task: 100] Initializing MLIR with module: _site_initialize_0
+[Task: 100] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 100] etils.epath was not found. Using pathlib for file I/O.
+[Task: 100] Creating converter from 3 to 5
+[Task: 100] 
+
+[Task: 100] Benchmark: name-combine-4_short.sl
+[Task: 100] Result: Success
+[Task: 100] Program: concat(lastname, concat(",", concat(" ", concat(firstname.CharAt(0), "."))))
+[Task: 100] Number of evaluations: 8185
+[Task: 100] 2023-03-16 12:54:31.042031
+[Task: 100] Time taken: 0:00:02.640040
+[Task: 100] Number of calls to heapify: 0
+[Task: 100] 
+
+
+[Task: 132] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Creating converter from 7 to 5
+[Task: 132] Creating converter from 5 to 7
+[Task: 132] Initializing MLIR with module: _site_initialize_0
+[Task: 132] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 132] etils.epath was not found. Using pathlib for file I/O.
+[Task: 132] Creating converter from 3 to 5
+[Task: 132] 
+
+[Task: 132] Benchmark: phone-6-short.sl
+[Task: 132] Result: Success
+[Task: 132] Program: name.Substr((name.IndexOf("-") - 3),name.IndexOf("-"))
+[Task: 132] Number of evaluations: 160193
+[Task: 132] 2023-03-16 12:55:18.493506
+[Task: 132] Time taken: 0:00:45.286563
+[Task: 132] Number of calls to heapify: 0
+[Task: 132] 
+
+
+[Task: 172] Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Creating converter from 7 to 5
+[Task: 172] Creating converter from 5 to 7
+[Task: 172] Initializing MLIR with module: _site_initialize_0
+[Task: 172] Registering dialects from initializer <module 'jaxlib.mlir._mlir_libs._site_initialize_0' from '/Users/cactus/Library/Python/3.9/lib/python/site-packages/jaxlib/mlir/_mlir_libs/_site_initialize_0.so'>
+[Task: 172] etils.epath was not found. Using pathlib for file I/O.
+[Task: 172] Creating converter from 3 to 5
+[Task: 172] 
+
+[Task: 172] Benchmark: stackoverflow4.sl
+[Task: 172] Result: Success
+[Task: 172] Program: _arg_0.replace(">", "").replace("<", " ").replace(",", " ").replace(",", " ")
+[Task: 172] Number of evaluations: 298025
+[Task: 172] 2023-03-16 12:56:01.131436
+[Task: 172] Time taken: 0:00:40.435318
+[Task: 172] Number of calls to heapify: 0
+[Task: 172] 
+
+
+

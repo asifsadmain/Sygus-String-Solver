@@ -1,0 +1,7 @@
+print("Benchmark: " + str(benchmark))
+print("Result: Fail")
+print("Program: None")
+print("Number of evaluations: " + str(num))
+print(str(datetime.now()))
+print("Time taken: " + str(datetime.now() - begin_time))
+print("Number of calls to heapify: " + str(reheapifies))
