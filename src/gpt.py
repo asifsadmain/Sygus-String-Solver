@@ -8,6 +8,7 @@ from itertools import product
 import sys
 import re
 from sygus_string_dsl import *
+from gpt_parser import parse_string
 
 
 PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
@@ -80,19 +81,19 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     CFG Explanation:
     ```
     {vars_and_lits}true, false: boolean literals
-    replace S S S: replace s x y, replaces first occurrence of substring x in string s with substring y
-    concat S S: concat x y, concatenates string x and string y
+    replace S S S: replace s x y, replaces first occurrence of string literal or argument x in string argument s with string literal or argument y
+    concat S S: concat x y, concatenates string literal or argument x and string literal or argument y
     substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
-    ite B S S: ite x y z, returns string y if x is true, otherwise string z
+    ite B S S: ite x y z, returns string literal or argument y if x is true, otherwise string literal or argument z
     int.to.str I: int.to.str x, converts int x to a string
     at S I: at x, y returns the character at index y in string x
-    = I I: = x y, returns true if x equals y
-    contains S S: contains x y, returns true if string x equals string y
-    suffixof S S: suffixof x y, returns true if string x is the suffix of string y
-    prefixof S S: prefixof x y, returns true if string x is the prefix of string y
+    = I I: = x y, returns true if integer literal or argument x equals integer literal or argument y
+    contains S S: contains x y, returns true if string literal or argument x contains string literal or argument y
+    suffixof S S: suffixof x y, returns true if string x literal or argument is the suffix of string literal or argument y
+    prefixof S S: prefixof x y, returns true if string literal or argument x is the prefix of string literal or argument y
     str.to.int S: str.to.int x, converts string x to an integer
-    + I I: + x y, sums integer x and integer y
-    - I I: - y y, subtracts integer y from integer x
+    + I I: + x y, sums integer literal or argument x and integer literal or argument y
+    - I I: - y y, subtracts integer literal or argument y from integer literal or argument x
     length S: length x, returns length of string x
     ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
     indexof S S I: indexof x y z, returns index of y in x, starting at index z
@@ -142,7 +143,7 @@ with open(config_directory+"sygus_string_benchmarks.txt") as f:
 user_message = construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples)
 
 response = get_response_from_api(user_message)
-# print(response)
+print(response)
 
 # Define a regular expression pattern to match text inside <program></program> tags
 pattern = r'<program>(.*?)<\/program>'
@@ -151,4 +152,6 @@ pattern = r'<program>(.*?)<\/program>'
 matches = re.findall(pattern, response, re.DOTALL)
 
 # Print the extracted text
-print(matches[0].strip())
+program = matches[0].strip()
+program = program.replace('\n', '')
+print(parse_string(program))
