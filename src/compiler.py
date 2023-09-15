@@ -1,3 +1,10 @@
+def iterate_lists(lst):
+    for i in lst:
+        if isinstance(i, list):
+            iterate_lists(i)
+    print(lst)
+
+
 def generate_string(parsed):
     if isinstance(parsed, str):
         return parsed
@@ -41,6 +48,6 @@ def generate_string(parsed):
 
 # Example usage:
 # parsed_input = ['concat', '"US"', ['replace', '"CAN"', '"CA"', '""']]
-parsed_input = [['replace', '"US"', '"CA"']['replace', ['concat', '" "', '"CAN"'], '""']]
-result = generate_string(parsed_input)
-print(result)
+# parsed_input = [['replace', '"US"', '"CA"']['replace', ['concat', '" "', '"CAN"'], '""']]
+# result = generate_string(parsed_input)
+# print(result)

@@ -3,11 +3,10 @@ import openai
 openai.api_key = "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"
 
 user_message = f"""
-I have a python list of lists. For example, it can be like [[1,2],[3,[4,5]]]. \
-I want to iterate through the list from the innermost to the outermost. \
-The output for the above list should be [4,5]\n[3,[4,5]]\n[1,2],\n[[1,2],[3,[4,5]]].
+I have a python string that looks like this:
+"(ite (suffixof ' US' _arg_0) (substr _arg_0 0 (- (length _arg_0) (length ' US'))) (ite (suffixof ' CAN' _arg_0) (substr _arg_0 0 (- (length _arg_0) (length ' CAN'))) _arg_0))"
 
-Write a python code to achieve these.
+Write a python code that check if any parentheses is missing or if there is any unexpected parentheses.
 """
 
 response = openai.ChatCompletion.create(

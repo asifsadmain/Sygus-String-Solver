@@ -4,6 +4,15 @@ def iterate_lists(lst):
             iterate_lists(i)
     print(lst)
 
+def flatten_list(lst):
+    result = []
+    for i in lst:
+        if isinstance(i, list):
+            result.extend(flatten_list(i))
+        else:
+            result.append(i)
+    return result
+
 def parse_string(s):
     stack = [[]]
     word = ''

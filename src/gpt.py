@@ -8,7 +8,9 @@ from itertools import product
 import sys
 import re
 from sygus_string_dsl import *
-from gpt_parser import parse_string
+from gpt_parser import parse_string, flatten_list
+from feedback import get_dsl_match_not_found
+from compiler import iterate_lists
 
 
 PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
@@ -112,8 +114,15 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     return user_message
 
 
+#driver code
 slurm_task_id = sys.argv[1]
 TaskId = int(slurm_task_id) - 1
+
+total_terms_and_nonterms = [
+    'replace', 'concat', 'substr', 'ite', 'int.to.str', 'at',
+    'true', 'false', '=', 'contains', 'suffixof', 'prefixof',
+    'str.to.int', '+', '-', 'length', 'ite', 'indexof'
+]
 
 with open(config_directory+"sygus_string_benchmarks.txt") as f:
     benchmarks = f.read().splitlines()
@@ -140,6 +149,9 @@ with open(config_directory+"sygus_string_benchmarks.txt") as f:
     
     input_output_examples = specifications[4]
 
+total_terms_and_nonterms = total_terms_and_nonterms + string_variables + string_literals + integer_variables + [str(num) for num in integer_literals]
+print(total_terms_and_nonterms)
+
 user_message = construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples)
 
 response = get_response_from_api(user_message)
@@ -153,5 +165,16 @@ matches = re.findall(pattern, response, re.DOTALL)
 
 # Print the extracted text
 program = matches[0].strip()
-program = program.replace('\n', '')
-print(parse_string(program))
+program = program.replace('\n', '').replace("'", '"')
+program_list = parse_string(program)
+
+flatten_program_list = flatten_list(program_list)
+print(program_list)
+print(flatten_program_list)
+
+unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
+
+if unavailable_elems:
+    print(get_dsl_match_not_found(unavailable_elems))
+
+iterate_lists(program_list)
