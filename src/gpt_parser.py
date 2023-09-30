@@ -2,6 +2,11 @@ def iterate_lists(lst):
     for i in lst:
         if isinstance(i, list):
             iterate_lists(i)
+    
+    if lst[0] == 'substr':
+        print(">>>>>>>>>>>>>>>>>>>>>>>")
+        print(lst[1][int(lst[2]):int(lst[3])])
+        lst = lst[1][int(lst[2]):int(lst[3])]
     print(lst)
 
 def flatten_list(lst):
@@ -45,5 +50,6 @@ def parse_string(s):
 
     return subprograms
 
-# s = '(concat (concat lastname ", ") (concat (at firstname 0) "."))'
+# s = '(concat lastname (concat ", " (concat (substr firstname 0 1) ".")))'
 # print(parse_string(s))
+# iterate_lists(s[0])

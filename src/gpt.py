@@ -8,9 +8,8 @@ from itertools import product
 import sys
 import re
 from sygus_string_dsl import *
-from gpt_parser import parse_string, flatten_list
+from gpt_parser import parse_string, flatten_list, iterate_lists
 from feedback import get_dsl_match_not_found
-from compiler import iterate_lists
 
 
 PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
