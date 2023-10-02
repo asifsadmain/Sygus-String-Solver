@@ -38,7 +38,7 @@ class Node:
         self.children.append(node)
 
     def print_tree(self, level=0):
-        print(' ' * level + str(self.data))
+        print(' ' * level + str(self.data) + ' (Level: ' + str(level) + ')')
         for child in self.children:
             child.print_tree(level + 1)
 

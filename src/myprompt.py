@@ -40,7 +40,7 @@ def dfs(node):
     print(node.data)
 ```
 
-Now write a function that can replace a node/subtree at a specific level with another node/subtree.
+Now write a function that can print the level of each node of the tree.
 """
 
 response = openai.ChatCompletion.create(
