@@ -95,7 +95,7 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     prefixof S S: prefixof x y, returns true if string literal or argument x is the prefix of string literal or argument y
     str.to.int S: str.to.int x, converts string x to an integer
     + I I: + x y, sums integer literal or argument x and integer literal or argument y
-    - I I: - y y, subtracts integer literal or argument y from integer literal or argument x
+    - I I: - x y, subtracts integer literal or argument y from integer literal or argument x
     length S: length x, returns length of string x
     ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
     indexof S S I: indexof x y z, returns index of y in x, starting at index z
@@ -173,7 +173,7 @@ print(program_list)
 print(flatten_program_list)
 
 ast = get_ast(program_list)
-ast.print_tree()
+synthesize(ast)
 
 # unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
 

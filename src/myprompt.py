@@ -23,6 +23,15 @@ class Node:
             return level
         return max(child.get_leaves_level(level + 1) for child in self.children)
 
+    def get_nodes_at_level(self, level, current_level=0):
+        if level == current_level:
+            return [self]
+        else:
+            nodes = []
+            for child in self.children:
+                nodes.extend(child.get_nodes_at_level(level, current_level + 1))
+            return nodes
+
 def replace_node(root, level, old_data, new_subtree):
     if level == 0 and root.data == old_data:
         return new_subtree
@@ -32,47 +41,9 @@ def replace_node(root, level, old_data, new_subtree):
         else:
             replace_node(root.children[i], level - 1, old_data, new_subtree)
     return root
-
-def convert_str_to_int(lst):
-    result = []
-    for item in lst:
-        if isinstance(item, list):
-            result.append(convert_str_to_int(item))
-        elif isinstance(item, str) and item.isdigit():
-            result.append(int(item))
-        else:
-            result.append(item)
-    return result
-
-def remove_unnecessary_brackets(lst):
-    if len(lst) == 1 and isinstance(lst[0], list):
-        return remove_unnecessary_brackets(lst[0])
-    return [remove_unnecessary_brackets(item) if isinstance(item, list) else item for item in lst]
-
-def build_ast(input_list):
-    if isinstance(input_list, list):
-        node = Node(input_list[0])
-        for item in input_list[1:]:
-            node.add_child(build_ast(item))
-        return node
-    else:
-        return Node(input_list)
-
-def get_ast(input_list):
-    input_list = remove_unnecessary_brackets(input_list)
-    input_list = convert_str_to_int(input_list)
-    ast = build_ast(input_list)
-
-    return ast
-
-# Test the function
-input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
-input_list = convert_str_to_int(input_list)
-ast = build_ast(input_list)
-print(ast.get_leaves_level())
 ```
 
-Now write a function that returns all the nodes of a given level.
+For the function "replace_node", if there are duplicate old_data at the same level, update the code so that it only replaces the first occurence.
 """
 
 response = openai.ChatCompletion.create(

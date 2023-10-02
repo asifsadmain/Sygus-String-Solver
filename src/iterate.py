@@ -25,15 +25,16 @@ class Node:
                 nodes.extend(child.get_nodes_at_level(level, current_level + 1))
             return nodes
 
-def replace_node(root, level, old_data, new_subtree):
-    if level == 0 and root.data == old_data:
-        return new_subtree
+def replace_node(root, level, old_data, new_subtree, replaced=False):
+    if level == 0 and root.data == old_data and not replaced:
+        return new_subtree, True
     for i in range(len(root.children)):
-        if root.children[i].data == old_data and level == 1:
+        if root.children[i].data == old_data and level == 1 and not replaced:
             root.children[i] = new_subtree
+            replaced = True
         else:
-            replace_node(root.children[i], level - 1, old_data, new_subtree)
-    return root
+            root.children[i], replaced = replace_node(root.children[i], level - 1, old_data, new_subtree, replaced)
+    return root, replaced
 
 def convert_str_to_int(lst):
     result = []
@@ -67,16 +68,75 @@ def get_ast(input_list):
 
     return ast
 
+def synthesize(ast):
+    while (ast.children):
+        current_level = ast.get_leaves_level() - 1
+        parents_of_leaves = ast.get_nodes_at_level(current_level)
+        
+        for parent_node in parents_of_leaves:
+            term = parent_node.data
+
+            if (term == 'concat'):
+                new_term = parent_node.children[0].data + parent_node.children[1].data
+            elif (term == 'substr'):
+                new_term = parent_node.children[0].data[parent_node.children[1].data : parent_node.children[2].data]
+            elif (term == 'replace'):
+                new_term = parent_node.children[0].data.replace(parent_node.children[1].data, parent_node.children[2].data)
+            elif (term == 'ite'):
+                if (parent_node.children[0].data):
+                    new_term = parent_node.children[1].data
+                else:
+                    new_term = parent_node.children[2].data
+            elif (term == 'int.to.str'):
+                new_term = str(parent_node.children[0].data)
+            elif (term == 'at'):
+                new_term = parent_node.children[0].data[parent_node.children[1].data]
+            elif (term == '='):
+                if (parent_node.children[0].data == parent_node.children[1].data):
+                    new_term = True
+                else:
+                    new_term = False
+            elif (term == 'contains'):
+                if parent_node.children[1].data in parent_node.children[0].data:
+                    new_term = True
+                else:
+                    new_term = False
+            elif (term == 'suffixof'):
+                if parent_node.children[1].data.endswith(parent_node.children[0].data):
+                    new_term = True
+                else:
+                    new_term = False
+            elif (term == 'prefixof'):
+                if parent_node.children[1].data.startswith(parent_node.children[0].data):
+                    new_term = True
+                else:
+                    new_term = False
+            elif (term == 'str.to.int'):
+                new_term = int(parent_node.children[0].data)
+            elif (term == '+'):
+                new_term = parent_node.children[0].data + parent_node.children[1].data
+            elif (term == '-'):
+                new_term = parent_node.children[0].data - parent_node.children[1].data
+            elif (term == 'length'):
+                new_term = len(parent_node.children[0].data)
+            elif (term == 'indexof'):
+                new_term = parent_node.children[0].data.index(parent_node.children[1].data, parent_node.children[2].data)
+            else:
+                new_term = term
+            ast, _ = replace_node(ast, current_level, parent_node.data, build_ast([new_term]))
+        ast.print_tree()
+
 # Test the function
-# input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
-input_list = ['concat', ['substr', 'firstname', '0', '1'], '.']
-input_list = convert_str_to_int(input_list)
-ast = build_ast(input_list)
-print(ast.get_nodes_at_level(ast.get_leaves_level()-1)[0].data)
-ast.print_tree()
+# input_list = ['concat', ['concat', 'lastname', ', '], ['concat', ['at', 'firstname', '0'], '.']]
+# # input_list = ['substr', 'firstname', '0', '1']
+# input_list = convert_str_to_int(input_list)
+# ast = build_ast(input_list)
+# ast.print_tree()
 # print()
 
 # new_subtree = build_ast(['concat', 'new_lastname', ['concat', ', ', ['concat', ['substr', 'new_firstname', '0', '1'], '.']]])
 
-# ast = replace_node(ast, 2, 'concat', new_subtree)
+# ast = replace_node(ast, 0, 'concat', build_ast([1]))
 # ast.print_tree()
+
+# print(ast.get_nodes_at_level(ast.get_leaves_level()-1))
