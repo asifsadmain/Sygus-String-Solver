@@ -51,11 +51,30 @@ def build_ast(input_list):
     else:
         return Node(input_list)
 
+def replace_node(root, level, old_data, new_subtree):
+    if level == 0 and root.data == old_data:
+        return new_subtree
+    for i in range(len(root.children)):
+        if root.children[i].data == old_data and level == 1:
+            root.children[i] = new_subtree
+        else:
+            replace_node(root.children[i], level - 1, old_data, new_subtree)
+    return root
+
 # Test the function
 input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
 ast = build_ast(input_list)
 
-ast.print_tree() 
+ast.print_tree()
+print()
+
+new_subtree = build_ast(['concat', 'new_lastname', ['concat', ', ', ['concat', ['substr', 'new_firstname', '0', '1'], '.']]])
+
+# Replace the old subtree with the new one
+ast = replace_node(ast, 1, 'concat', new_subtree)
+
+# Print the modified tree
+ast.print_tree()
 
 def dfs(node):
     if node is not None:

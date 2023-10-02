@@ -30,9 +30,17 @@ def build_ast(input_list):
 # Test the function
 input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
 ast = build_ast(input_list)
+
+ast.print_tree() 
+
+def dfs(node):
+    if node is not None:
+        for child in node.children:
+            dfs(child)
+    print(node.data)
 ```
 
-Now write a function that applies depth-first search to the tree and prints the nodes.
+Now write a function that can replace a node/subtree at a specific level with another node/subtree.
 """
 
 response = openai.ChatCompletion.create(
