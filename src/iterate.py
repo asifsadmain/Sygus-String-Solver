@@ -11,6 +11,20 @@ class Node:
         for child in self.children:
             child.print_tree(level + 1)
 
+    def get_leaves_level(self, level=0):
+        if not self.children:
+            return level
+        return max(child.get_leaves_level(level + 1) for child in self.children)
+
+    def get_nodes_at_level(self, level, current_level=0):
+        if level == current_level:
+            return [self]
+        else:
+            nodes = []
+            for child in self.children:
+                nodes.extend(child.get_nodes_at_level(level, current_level + 1))
+            return nodes
+
 def replace_node(root, level, old_data, new_subtree):
     if level == 0 and root.data == old_data:
         return new_subtree
@@ -55,10 +69,11 @@ def get_ast(input_list):
 
 # Test the function
 # input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
-# input_list = convert_str_to_int(input_list)
-# ast = build_ast(input_list)
-
-# ast.print_tree()
+input_list = ['concat', ['substr', 'firstname', '0', '1'], '.']
+input_list = convert_str_to_int(input_list)
+ast = build_ast(input_list)
+print(ast.get_nodes_at_level(ast.get_leaves_level()-1)[0].data)
+ast.print_tree()
 # print()
 
 # new_subtree = build_ast(['concat', 'new_lastname', ['concat', ', ', ['concat', ['substr', 'new_firstname', '0', '1'], '.']]])

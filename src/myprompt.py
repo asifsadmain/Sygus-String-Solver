@@ -18,6 +18,11 @@ class Node:
         for child in self.children:
             child.print_tree(level + 1)
 
+    def get_leaves_level(self, level=0):
+        if not self.children:
+            return level
+        return max(child.get_leaves_level(level + 1) for child in self.children)
+
 def replace_node(root, level, old_data, new_subtree):
     if level == 0 and root.data == old_data:
         return new_subtree
@@ -59,9 +64,15 @@ def get_ast(input_list):
     ast = build_ast(input_list)
 
     return ast
+
+# Test the function
+input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
+input_list = convert_str_to_int(input_list)
+ast = build_ast(input_list)
+print(ast.get_leaves_level())
 ```
 
-Now write a function that can go to the parent of the leaves and find the value and level of that parent.
+Now write a function that returns all the nodes of a given level.
 """
 
 response = openai.ChatCompletion.create(
