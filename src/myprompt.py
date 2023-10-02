@@ -14,9 +14,35 @@ class Node:
         self.children.append(node)
 
     def print_tree(self, level=0):
-        print(' ' * level + str(self.data))
+        print(' ' * level + str(self.data) + ' (Level: ' + str(level) + ')')
         for child in self.children:
             child.print_tree(level + 1)
+
+def replace_node(root, level, old_data, new_subtree):
+    if level == 0 and root.data == old_data:
+        return new_subtree
+    for i in range(len(root.children)):
+        if root.children[i].data == old_data and level == 1:
+            root.children[i] = new_subtree
+        else:
+            replace_node(root.children[i], level - 1, old_data, new_subtree)
+    return root
+
+def convert_str_to_int(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.append(convert_str_to_int(item))
+        elif isinstance(item, str) and item.isdigit():
+            result.append(int(item))
+        else:
+            result.append(item)
+    return result
+
+def remove_unnecessary_brackets(lst):
+    if len(lst) == 1 and isinstance(lst[0], list):
+        return remove_unnecessary_brackets(lst[0])
+    return [remove_unnecessary_brackets(item) if isinstance(item, list) else item for item in lst]
 
 def build_ast(input_list):
     if isinstance(input_list, list):
@@ -27,20 +53,15 @@ def build_ast(input_list):
     else:
         return Node(input_list)
 
-# Test the function
-input_list = ['concat', 'lastname', ['concat', ', ', ['concat', ['substr', 'firstname', '0', '1'], '.']]]
-ast = build_ast(input_list)
+def get_ast(input_list):
+    input_list = remove_unnecessary_brackets(input_list)
+    input_list = convert_str_to_int(input_list)
+    ast = build_ast(input_list)
 
-ast.print_tree() 
-
-def dfs(node):
-    if node is not None:
-        for child in node.children:
-            dfs(child)
-    print(node.data)
+    return ast
 ```
 
-Now write a function that can print the level of each node of the tree.
+Now write a function that can go to the parent of the leaves and find the value and level of that parent.
 """
 
 response = openai.ChatCompletion.create(

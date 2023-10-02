@@ -10,6 +10,7 @@ import re
 from sygus_string_dsl import *
 from gpt_parser import parse_string, flatten_list, iterate_lists
 from feedback import get_dsl_match_not_found
+from iterate import *
 
 
 PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
@@ -171,9 +172,12 @@ flatten_program_list = flatten_list(program_list)
 print(program_list)
 print(flatten_program_list)
 
-unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
+ast = get_ast(program_list)
+ast.print_tree()
 
-if unavailable_elems:
-    print(get_dsl_match_not_found(unavailable_elems))
+# unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
 
-iterate_lists(program_list)
+# if unavailable_elems:
+#     print(get_dsl_match_not_found(unavailable_elems))
+
+# iterate_lists(program_list)
