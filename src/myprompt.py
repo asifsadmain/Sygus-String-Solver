@@ -3,47 +3,23 @@ import openai
 openai.api_key = "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"
 
 user_message = f"""
-I have this following code in python:
-```code
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.children = []
+The following is the Context Free Grammar (CFG) for the Karel domain:
 
-    def add_child(self, node):
-        self.children.append(node)
-
-    def print_tree(self, level=0):
-        print(' ' * level + str(self.data) + ' (Level: ' + str(level) + ')')
-        for child in self.children:
-            child.print_tree(level + 1)
-
-    def get_leaves_level(self, level=0):
-        if not self.children:
-            return level
-        return max(child.get_leaves_level(level + 1) for child in self.children)
-
-    def get_nodes_at_level(self, level, current_level=0):
-        if level == current_level:
-            return [self]
-        else:
-            nodes = []
-            for child in self.children:
-                nodes.extend(child.get_nodes_at_level(level, current_level + 1))
-            return nodes
-
-def replace_node(root, level, old_data, new_subtree):
-    if level == 0 and root.data == old_data:
-        return new_subtree
-    for i in range(len(root.children)):
-        if root.children[i].data == old_data and level == 1:
-            root.children[i] = new_subtree
-        else:
-            replace_node(root.children[i], level - 1, old_data, new_subtree)
-    return root
+```
+Program ρ := DEF run m( s m)
+Repetition n := Number of repetitions
+Perception h := frontIsClear | leftIsClear | rightIsClear | markerPresent | noMarkerPresent
+Condition b := perception h | not perception h
+Action a := move | turnLeft | turnRight | putMarker | pickMarker
+Statements := while c( b c) w( s w) | s1;s2 | a | repeat R=n r( s r) | if c( b c) i( s i) |
+ifelse c( b c) i(s1 i) else e( s2 e)
 ```
 
-For the function "replace_node", if there are duplicate old_data at the same level, update the code so that it only replaces the first occurence.
+Now, I have an 6x6 grid where the bot needs to pick a marker from a stair. The marker is at the top of the stairs. \
+If the row and column indices are from 0 to 5 and the bottomleft cell is (0,0), then the stairs create block at \
+(0,1), (0,2), (1,2), (1,3), (2,3),(2,4), (3,4), (3,5) and (4,5). The marker is placed at (5,5). This problem is called "StairClimber".
+
+Your task is to write a program following the above CFG that can complete the "StairClimber" task.
 """
 
 response = openai.ChatCompletion.create(

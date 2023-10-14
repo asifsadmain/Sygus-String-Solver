@@ -2,6 +2,7 @@ import openai
 from datetime import datetime
 import logging
 import os
+from copy import deepcopy
 from utils import *
 from sygus_parser import StrParser
 from itertools import product
@@ -170,10 +171,17 @@ program_list = parse_string(program)
 
 flatten_program_list = flatten_list(program_list)
 print(program_list)
-print(flatten_program_list)
+print()
 
-ast = get_ast(program_list)
-synthesize(ast)
+print("Expected Output\t\t\tGPT Output")
+print("-----------------------------------------------------")
+for example in input_output_examples:
+    example_program_list = deepcopy(program_list)
+    for var in string_variables + integer_variables:
+        replace_placeholders(example_program_list, var, example[var])
+    ast = get_ast(example_program_list)
+    ast = evaluate(ast)
+    print(example['out'], "\t\t\t", ast.data)
 
 # unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
 
