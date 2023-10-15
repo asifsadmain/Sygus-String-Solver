@@ -116,8 +116,15 @@ def construct_user_message(string_variables, string_literals, integer_variables,
 
 
 #driver code
+log_filename = logs_directory + "/gpt.log"
 slurm_task_id = sys.argv[1]
 TaskId = int(slurm_task_id) - 1
+logging.basicConfig(filename=log_filename,
+                        filemode='a',
+                        format='%(message)s',
+                        datefmt='%H:%M:%S',
+                        level=logging.INFO)
+logging.info("[Task: " + str(TaskId) + "]")
 
 total_terms_and_nonterms = [
     'replace', 'concat', 'substr', 'ite', 'int.to.str', 'at',
@@ -166,22 +173,33 @@ matches = re.findall(pattern, response, re.DOTALL)
 
 # Print the extracted text
 program = matches[0].strip()
+logging.info("Program: " + program + "\n")
 program = program.replace('\n', '').replace("'", '"')
 program_list = parse_string(program)
 
 flatten_program_list = flatten_list(program_list)
+is_success = True
 print(program_list)
 print()
-
-print("Expected Output\t\t\tGPT Output")
-print("-----------------------------------------------------")
+logging.info("Expected Output\t\t\tGPT Output")
+logging.info("-----------------------------------------------------")
+io_log = ""
 for example in input_output_examples:
     example_program_list = deepcopy(program_list)
     for var in string_variables + integer_variables:
         replace_placeholders(example_program_list, var, example[var])
     ast = get_ast(example_program_list)
     ast = evaluate(ast)
-    print(example['out'], "\t\t\t", ast.data)
+    io_log += example['out'] + "\t\t\t" + ast.data + "\n"
+    if (example['out'] != ast.data):
+        is_success = False
+logging.info(io_log)
+if (is_success):
+    logging.info("Result: Success")
+else:
+    logging.error("Result: Failed")
+
+logging.info("\n\n\n")
 
 # unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]
 
