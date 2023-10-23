@@ -128,7 +128,7 @@ def evaluate(ast):
             elif (term == 'length'):
                 new_term = len(parent_node.children[0].data)
             elif (term == 'indexof'):
-                new_term = parent_node.children[0].data.index(parent_node.children[1].data, parent_node.children[2].data)
+                new_term = parent_node.children[0].data.find(parent_node.children[1].data, parent_node.children[2].data)
             else:
                 new_term = term
             ast, _ = replace_node(ast, current_level, parent_node.data, build_ast([new_term]))
@@ -137,8 +137,9 @@ def evaluate(ast):
     return ast
 
 # Test the function
-# input_list = ['concat', ['concat', 'lastname', ', '], ['concat', ['at', 'firstname', '0'], '.']]
-# input_list = ['substr', '938-242-504', '4', '3']
+# input_list = [['str.to.int', ['replace', 'apple apples', 'apple', ['concat', 'apple', ' ']]]]
+# input_list = ['substr', 'http=//www.apple.com/uk/mac', ['indexof', 'http=//www.apple.com/uk/mac', 'microsoft', '0'], ['length', 'microsoft']]
+# input_list = ['str.to.int', ['replace', 'apple apples', 'apple', ['concat', 'apple', ' ']]]
 # input_list = convert_str_to_int(input_list)
 # ast = get_ast(input_list)
 # ast = evaluate(ast)

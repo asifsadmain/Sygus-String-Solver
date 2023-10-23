@@ -188,6 +188,9 @@ for example in input_output_examples:
     example_program_list = deepcopy(program_list)
     for var in string_variables + integer_variables:
         replace_placeholders(example_program_list, var, example[var])
+    print("======================")
+    print(example_program_list)
+    print("======================")
     ast = get_ast(example_program_list)
     ast = evaluate(ast)
     io_log += example['out'] + "\t\t\t" + ast.data + "\n"
