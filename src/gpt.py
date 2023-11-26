@@ -83,7 +83,8 @@ def construct_user_message(string_variables, string_literals, integer_variables,
 
     CFG Explanation:
     ```
-    {vars_and_lits}true, false: boolean literals
+    {vars_and_lits}: string and integer variables and literals
+    true, false: boolean literals
     replace S S S: replace s x y, replaces first occurrence of string literal or argument x in string argument s with string literal or argument y
     concat S S: concat x y, concatenates string literal or argument x and string literal or argument y
     substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
