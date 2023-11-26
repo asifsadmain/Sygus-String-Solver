@@ -23,24 +23,30 @@ openai.api_key = "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"
 # """
 
 user_message = f"""
-I have the following program:
+I have the following code segment:
+```
+found = False
+last_program = None
+latest_io_log = None
+error_message = None
+count = 0
 
+while(not found):
+    if (count == 3):
+        break
 
-```program
-DEF run m( REPEAT R=6 r( WHILE c( frontIsClear c) w( move IFELSE c( rightIsClear c) i( turnRight ) ELSE e( turnLeft ) ) w IFELSE c( markersPresent c) i( pickMarker ) ELSE e( putMarker ) ) r )
+    try:
+        program, found, io_log = synthesize(last_program, error_message, latest_io_log)
+        latest_io_log = io_log
+    except Exception as e:
+        error_message = e
+    finally:
+        last_program = program
+
+    count += 1
 ```
 
-But I need to transform it like the following:
-
-```expected program
-DEF run m( REPEAT R=6 r( WHILE c( frontIsClear c) w( move IFELSE c( rightIsClear c) i( turnRight i) ELSE e( turnLeft e) w) IFELSE c( markersPresent c) i( pickMarker i) ELSE e( putMarker e) r) m)
-```
-
-Here, the condition in WHILE statement starts with "c(" and ends with "c)", the WHILE statement should \
-start with "w(" and end with "w)", the IF statement should start with "i(" and end with "i)" and the \
-ELSE statement should start with "e(" and end with "e)".
-
-Write a python code that can transform the above program to the expected program.
+When the code throws exception, the "last_program" becomes "None". But I want to have the last_program assigned as program even when the exception is thrown.
 """
 
 response = openai.ChatCompletion.create(

@@ -116,93 +116,140 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     return user_message
 
 
-#driver code
-log_filename = logs_directory + "/gpt.log"
-slurm_task_id = sys.argv[1]
-TaskId = int(slurm_task_id) - 1
-logging.basicConfig(filename=log_filename,
-                        filemode='a',
-                        format='%(message)s',
-                        datefmt='%H:%M:%S',
-                        level=logging.INFO)
-logging.info("[Task: " + str(TaskId) + "]")
+def synthesize(last_gpt_program, error_message, latest_io_log):
+    log_filename = logs_directory + "/gpt.log"
+    slurm_task_id = sys.argv[1]
+    TaskId = int(slurm_task_id) - 1
+    logging.basicConfig(filename=log_filename,
+                            filemode='a',
+                            format='%(message)s',
+                            datefmt='%H:%M:%S',
+                            level=logging.INFO)
+    logging.info("[Task: " + str(TaskId) + "]")
 
-total_terms_and_nonterms = [
-    'replace', 'concat', 'substr', 'ite', 'int.to.str', 'at',
-    'true', 'false', '=', 'contains', 'suffixof', 'prefixof',
-    'str.to.int', '+', '-', 'length', 'ite', 'indexof'
-]
+    total_terms_and_nonterms = [
+        'replace', 'concat', 'substr', 'ite', 'int.to.str', 'at',
+        'true', 'false', '=', 'contains', 'suffixof', 'prefixof',
+        'str.to.int', '+', '-', 'length', 'ite', 'indexof'
+    ]
 
-with open(config_directory+"sygus_string_benchmarks.txt") as f:
-    benchmarks = f.read().splitlines()
+    with open(config_directory+"sygus_string_benchmarks.txt") as f:
+        benchmarks = f.read().splitlines()
 
-    string_variables = []
-    string_literals = []
-    integer_variables = []
-    integer_literals = []
+        string_variables = []
+        string_literals = []
+        integer_variables = []
+        integer_literals = []
 
-    benchmark = None
-    filename = benchmarks[TaskId]
-    print("filename =", filename)
+        benchmark = None
+        filename = benchmarks[TaskId]
+        print("filename =", filename)
 
-    benchmark = filename
+        benchmark = filename
 
-    specification_parser = StrParser(benchmark)
-    specifications = specification_parser.parse()
-    logging.info("\n")
+        specification_parser = StrParser(benchmark)
+        specifications = specification_parser.parse()
+        logging.info("\n")
 
-    string_variables = specifications[0]
-    string_literals = specifications[1]
-    integer_variables = specifications[2]
-    integer_literals = specifications[3]
-    
-    input_output_examples = specifications[4]
+        string_variables = specifications[0]
+        string_literals = specifications[1]
+        integer_variables = specifications[2]
+        integer_literals = specifications[3]
+        
+        input_output_examples = specifications[4]
 
-total_terms_and_nonterms = total_terms_and_nonterms + string_variables + string_literals + integer_variables + [str(num) for num in integer_literals]
-print(total_terms_and_nonterms)
+    total_terms_and_nonterms = total_terms_and_nonterms + string_variables + string_literals + integer_variables + [str(num) for num in integer_literals]
+    # print(total_terms_and_nonterms)
 
-user_message = construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples)
+    user_message = construct_user_message(string_variables, string_literals, integer_variables, integer_literals, input_output_examples)
 
-response = get_response_from_api(user_message)
-print(response)
+    if (error_message):
+        user_message += f"""
+        The last program obtained from you was {last_gpt_program} which threw the following error message:
+        ```
+        {error_message}
+        ```
+        Please update this program and make it functional to obtain the expected output.
+        """
+    elif (latest_io_log):
+        user_message += f"""
+        The last program obtained from you was {last_gpt_program}. The output and the expected output do not match. \
+        They look like the following:
+        ```
+        Expected Output\t\t\tGPT Output
+        -----------------------------------------------------
+        {latest_io_log}
+        ```
+        Please check if the program satisfies the given CFG. Then update this program and make it functional to obtain the expected output.
+        """
 
-# Define a regular expression pattern to match text inside <program></program> tags
-pattern = r'<program>(.*?)<\/program>'
+    print("=================Request================")
+    print(user_message)
+    print()
+    response = get_response_from_api(user_message)
+    print("=================Response===============")
+    print(response)
+    print()
 
-# Use re.findall to find all matches of the pattern in the input string
-matches = re.findall(pattern, response, re.DOTALL)
+    # Define a regular expression pattern to match text inside <program></program> tags
+    pattern = r'<program>(.*?)<\/program>'
 
-# Print the extracted text
-program = matches[0].strip()
-logging.info("Program: " + program + "\n")
-program = program.replace('\n', '').replace("'", '"')
-program_list = parse_string(program)
+    # Use re.findall to find all matches of the pattern in the input string
+    matches = re.findall(pattern, response, re.DOTALL)
 
-flatten_program_list = flatten_list(program_list)
-is_success = True
-print(program_list)
-print()
-logging.info("Expected Output\t\t\tGPT Output")
-logging.info("-----------------------------------------------------")
-io_log = ""
-for example in input_output_examples:
-    example_program_list = deepcopy(program_list)
-    for var in string_variables + integer_variables:
-        replace_placeholders(example_program_list, var, example[var])
-    print("======================")
-    print(example_program_list)
-    print("======================")
-    ast = get_ast(example_program_list)
-    ast = evaluate(ast)
-    io_log += example['out'] + "\t\t\t" + ast.data + "\n"
-    if (example['out'] != ast.data):
-        is_success = False
-logging.info(io_log)
-if (is_success):
+    # Print the extracted text
+    program = matches[0].strip()
+    logging.info("Program: " + program + "\n")
+    program = program.replace('\n', '').replace("'", '"')
+    program_list = parse_string(program)
+
+    flatten_program_list = flatten_list(program_list)
+    is_success = True
+    # print(program_list)
+    # print()
+    logging.info("Expected Output\t\t\tGPT Output")
+    logging.info("-----------------------------------------------------")
+    io_log = ""
+    for example in input_output_examples:
+        example_program_list = deepcopy(program_list)
+        for var in string_variables + integer_variables:
+            replace_placeholders(example_program_list, var, example[var])
+        # print("======================")
+        # print(example_program_list)
+        # print("======================")
+        ast = get_ast(example_program_list)
+        ast = evaluate(ast)
+        io_log += example['out'] + "\t\t\t" + ast.data + "\n"
+        if (example['out'] != ast.data):
+            is_success = False
+    logging.info(io_log)
+
+    return program, is_success, io_log
+
+found = False
+last_program = None
+latest_io_log = None
+error_message = None
+count = 0
+
+while(not found):
+    if (count == 3):
+        break
+
+    try:
+        program, found, io_log = synthesize(last_program, error_message, latest_io_log)
+        latest_io_log = io_log
+    except Exception as e:
+        error_message = e
+    finally:
+        last_program = program
+
+    count += 1
+
+if (found):
     logging.info("Result: Success")
 else:
-    logging.error("Result: Failed")
-
+    logging.info("Result: Failed")
 logging.info("\n\n\n")
 
 # unavailable_elems = [item for item in flatten_program_list if item not in total_terms_and_nonterms]

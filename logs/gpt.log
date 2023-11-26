@@ -1,0 +1,38 @@
+[Task: 26]
+
+
+Program: (ite (= _arg_1 1) 
+    (substr _arg_0 0 (indexof _arg_0 "-" 0)) 
+    (substr _arg_0 (+ (indexof _arg_0 "-" 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "-" 0) 1))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 26]
+
+
+[Task: 26]
+
+
+Result: Failed
+
+
+
+
+[Task: 1]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "." -1) (+ 2 (indexof (substr _arg_0 (+ 1 (indexof _arg_0 "." -1)) 0 -1) " " 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 1]
+
+
+[Task: 1]
+
+
+Result: Failed
+
+
+
+
