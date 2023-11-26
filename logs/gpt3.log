@@ -1,0 +1,5552 @@
+[Task: 0]
+
+
+Program: (ite (suffixof ' US' _arg_0) 
+     (substr _arg_0 0 (- (length _arg_0) 3)) 
+     (ite (suffixof ' CAN' _arg_0) 
+          (substr _arg_0 0 (- (length _arg_0) 4)) 
+          _arg_0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Mining			Mining
+Soybean Farming			Soybean Farming
+Soybean Farming			Soybean Farming
+Oil Extraction			Oil Extraction
+Fishing			Fishing
+
+Result: Success
+
+
+
+
+[Task: 1]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "." 0) (+ (indexof (substr _arg_0 (indexof _arg_0 "." 0) (length _arg_0)) " " 0) 1))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+5.1			
+3.5			.5.0 
+2.6			.6 
+2.6			
+1.0			
+6.1			
+
+Result: Failed
+
+
+
+
+[Task: 2]
+
+
+Program: (indexof _arg_0 _arg_1 0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 3]
+
+
+Program: (replace _arg_0 (substr _arg_0 0 3) '')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+01/2013			15/2013
+03/2011			07/2011
+05/2009			09/2009
+
+Result: Failed
+
+
+
+
+[Task: 4]
+
+
+Program: (contains _arg_0 '9999999')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 5]
+
+
+Program: (at _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 6]
+
+
+Program: (concat (at _arg_0 0) (substr _arg_0 (indexof _arg_0 " " 0) (- (length _arg_0) (indexof _arg_0 " " 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+J Doe			J Doe
+M Naik			M Naik
+N Singh			N Singh
+
+Result: Success
+
+
+
+
+[Task: 7]
+
+
+[Task: 8]
+
+
+Program: (ite (contains _arg_0 'BRD') 
+     (replace _arg_0 'BRD' 'Branding') 
+     (ite (contains _arg_0 'DRS') 
+          (replace _arg_0 'DRS' 'Direct Response') 
+          (replace _arg_0 'LDS' 'Leads')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Adf_ROCLeader_BAN_728x90_CPM_STD _Branding _NRT_DCK			Adf_ROCLeader_BAN_728x90_CPM_STD _Branding _NRT_DCK
+MMC_ContextualLarRec_BAN_336x280_CPM_STD _Leads _RTG_DCK			MMC_ContextualLarRec_BAN_336x280_CPM_STD _Leads _RTG_DCK
+Adf_ROC_DLBD_728x90_CPM_STD_Direct Response_NRT_NOR_DCK			Adf_ROC_DLBD_728x90_CPM_STD_Direct Response_NRT_NOR_DCK
+
+Result: Success
+
+
+
+
+[Task: 9]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 "=" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Dec 2, 2014, 11=23 PM			Dec 2, 2014, 11
+Dec 2, 2014, 11=24 PM			Dec 2, 2014, 11
+
+Result: Failed
+
+
+
+
+[Task: 10]
+
+
+Program: (replace _arg_0 " | " "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+TL-18273982			TL-18273982| 10MM
+TL-288762			TL-288762| 76DK
+CT-576			CT-576
+N/A			N/A
+
+Result: Failed
+
+
+
+
+[Task: 11]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 " " 1) 1) (- (indexof _arg_0 " " (+ (indexof _arg_0 " " 1) 1)) (+ (indexof _arg_0 " " 1) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+ABC123873			Pressure
+ABC849999999021			Life
+GHF211			conditioner
+
+Result: Failed
+
+
+
+
+[Task: 12]
+
+
+Program: def remove_suffixes(s):
+    s = s.replace(' Inc', '')
+    s = s.replace(' Company', '')
+    s = s.replace(' Corporation', '')
+    s = s.replace(' Enterprises', '')
+    return s
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 13]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 "=" 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "=" 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 14]
+
+
+Program: (ite (prefixof "C0" _arg_0) _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+C0abc			C0abc
+def			def
+C0dd			C0dd
+qwe			qwe
+
+Result: Success
+
+
+
+
+[Task: 15]
+
+
+Program: (ite 
+        (contains _arg_0 "mac") 
+        (substr _arg_0 (+ (indexof _arg_0 "mac" 0) 1) 3) 
+        (ite 
+            (contains _arg_0 "windows") 
+            (substr _arg_0 (+ (indexof _arg_0 "windows" 0) 1) 7) 
+            (substr _arg_0 (+ (indexof _arg_0 "microsoft" 0) 1) 9)
+        )
+    )
+
+Expected Output			GPT Output
+-----------------------------------------------------
+mac			ac
+windows			indows
+microsoft			icrosoft.
+
+Result: Failed
+
+
+
+
+[Task: 16]
+
+
+Program: ```
+(substr _arg_0 (+ (indexof _arg_0 "/" (- (length _arg_0) 1)) 1) (- (length _arg_0) (+ (indexof _arg_0 "/" (- (length _arg_0) 1)) 1)))
+```
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 17]
+
+
+Program: (suffixof _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 18]
+
+
+Program: (ite (contains _arg_0 _arg_2) _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+I hate bananas			I hate bananas
+I love apples			I love apples
+
+Result: Success
+
+
+
+
+[Task: 19]
+
+
+Program: (ite (prefixof 'that' _arg_0) 
+     (substr _arg_0 4 (- (length _arg_0) 4)) 
+     _arg_0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+ensures			ensures
+will			will
+have			have
+know			knowthat
+that			
+mouse			mouse
+know			knowthat
+
+Result: Failed
+
+
+
+
+[Task: 20]
+
+
+Program: (replace (replace _arg_0 "<" "") ">" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+This is a string, It should be changed to a number.			This is a string, It should be changed to a number.
+a  4 and a  0			a  4 and a  0
+
+Result: Success
+
+
+
+
+[Task: 21]
+
+
+Program: (replace _arg_0 (concat "/" (substr _arg_0 (+ 1 (indexof _arg_0 "/" 0)) (- (length _arg_0) (+ 1 (indexof _arg_0 "/" 0)))) ) "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+This is a line. keep this part			This is a line. 
+			
+
+Result: Failed
+
+
+
+
+[Task: 22]
+
+
+Program: (contains _arg_0 "some project")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 23]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 " " 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Polygonum			Polygonum
+Hippuris			Hippuris
+Lysimachia			Lysimachia
+Juncus bulbosus			Juncus
+Lycopus europaeus			Lycopus
+Nymphaea			Nymphaea
+
+Result: Failed
+
+
+
+
+[Task: 24]
+
+
+Program: (ite (= _arg_1 1) (concat _arg_0 " apple") 
+        (ite (= _arg_1 2) (concat _arg_0 " bananas") 
+            (ite (= _arg_1 3) (concat _arg_0 " strawberries") 
+                (ite (= _arg_1 4) (concat _arg_0 " oranges") 
+                    _arg_0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+one apple			one, 1
+two bananas			two, 2
+three strawberries			three, 3
+four oranges			four, 4
+
+Result: Failed
+
+
+
+
+[Task: 25]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 "," 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "," 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+EUR			CASH,EUR>
+USD			CASH,USD>
+WON			CASH,WON>
+YEN			CASH,YEN>
+
+Result: Failed
+
+
+
+
+[Task: 26]
+
+
+Program: (ite (= _arg_1 1) 
+    (substr _arg_0 0 (indexof _arg_0 "-" 0)) 
+    (substr _arg_0 (+ (indexof _arg_0 "-" 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "-" 0) 1))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 27]
+
+
+Program: (concat _arg_0 (concat '/n' (concat _arg_1 (concat '/n' _arg_2))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Traci Brown/n1301 Robinson Court/nSaginaw, MI 48607			Traci Brown/n1301 Robinson Court/nSaginaw, MI 48607
+Mary Hannan/n1195 Amethyst Drive/nLansing, MI 48933			Mary Hannan/n1195 Amethyst Drive/nLansing, MI 48933
+Linda Thomas/n2479 North Bend Road/nAllen, KY 41601			Linda Thomas/n2479 North Bend Road/nAllen, KY 41601
+
+Result: Success
+
+
+
+
+[Task: 28]
+
+
+Program: (substr name 0 (str.to.int (at (indexof name '0' 0) 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 29]
+
+
+Program: (substr name 0 (indexof name "0123456789" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 30]
+
+
+Program: (substr name 0 (str.to.int (at (ite (contains name "1") "1" (ite (contains name "2") "2" (ite (contains name "3") "3" (ite (contains name "4") "4" (ite (contains name "5") "5" "0"))))) 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 31]
+
+
+Program: (define (getBrandName name)
+  (substr name 0 (str.to.int (at name (length name)))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 32]
+
+
+Program: (ite (contains _arg_0 _arg_1) 
+    (ite (contains _arg_0 _arg_2) 
+        (contains _arg_0 _arg_3) 
+        false) 
+    false)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 33]
+
+
+Program: (ite (contains _arg_0 '1') true
+(ite (contains _arg_0 '2') true
+(ite (contains _arg_0 '3') true
+(ite (contains _arg_0 '4') true
+(contains _arg_0 '5')))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 34]
+
+
+[Task: 35]
+
+
+Program: (= (str.to.int (substr _arg_0 0 (indexof _arg_0 " " 0))) (str.to.int _arg_1))
+(and
+(= (str.to.int (substr _arg_0 (+ 1 (indexof _arg_0 " " 0)) (- (indexof _arg_0 " " (+ 1 (indexof _arg_0 " " 0))) (+ 1 (indexof _arg_0 " " 0))))) (str.to.int _arg_3))
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 36]
+
+
+Program: (ite 
+    (and 
+        (= 
+            (substr _arg_0 0 (indexof _arg_0 " " 0)) 
+            _arg_1
+        ) 
+        (= 
+            (substr _arg_0 (+ 1 (indexof _arg_0 " " 0)) (- (length _arg_0) (+ 1 (indexof _arg_0 " " 0)))) 
+            _arg_2
+        )
+    ) 
+    true 
+    false
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 37]
+
+
+Program: (contains _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 38]
+
+
+[Task: 39]
+
+
+Program: (replace _arg_0 "-" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 40]
+
+
+Program: (replace 
+        (replace 
+            (replace _arg_0 "-" "") 
+        "<" "") 
+    ">" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+8014568765			8014568765
+9786540299			978 6540299
+9786540299			978.654.0299
+
+Result: Failed
+
+
+
+
+[Task: 41]
+
+
+Program: (= _arg_0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 42]
+
+
+Program: (int.to.str _arg_0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 43]
+
+
+Program: _arg_0
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 44]
+
+
+Program: def find_zero_index(s):
+    return s.index('0')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 45]
+
+
+Program: (define (count-lines _arg_0)
+  (- (length _arg_0) (length (replace _arg_0 "/n" ""))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 46]
+
+
+Program: (define (count _arg_0 _arg_1)
+  (if (contains _arg_0 _arg_1)
+      (+ 1 (count (replace _arg_0 _arg_1 "") _arg_1))
+      0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 47]
+
+
+Program: (define (count-occurrences _arg_0 _arg_1)
+  (let ((first-occurrence (indexof _arg_0 _arg_1 0)))
+    (if (= first-occurrence -1)
+        0
+        (+ 1 (count-occurrences (substr _arg_0 (+ first-occurrence 1) (length _arg_0)) _arg_1)))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 48]
+
+
+Program: (length _arg_0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 49]
+
+
+Program: (define-fun countWords ((s String)) Int
+  (ite (= s "")
+    0
+    (+ 1 (countWords (substr s (+ 1 (indexof s " " 0)) (- (length s) (+ 1 (indexof s " " 0))))))))
+(countWords _arg_0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 50]
+
+
+Program: (concat (concat (at _arg_1 0) _arg_0) '_acme.com')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+tbrown_acme.com			tbrown_acme.com
+lthomas_acme.com			lthomas_acme.com
+jward_acme.com			jward_acme.com
+
+Result: Success
+
+
+
+
+[Task: 51]
+
+
+Program: (concat (concat (concat (at _arg_0 0) _arg_1) '_') _arg_2)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+aogawa_acme.com			aogawa_acme.com
+ajohnson_google.com			ajohnson_google.com
+tchang_upenn.edu			tchang_upenn.edu
+
+Result: Success
+
+
+
+
+[Task: 52]
+
+
+[Task: 53]
+
+
+Program: (concat 'Dr. ' (substr name 0 (indexof name ' ' 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Dr. Launa			Dr. Launa
+Dr. Lakenya			Dr. Lakenya
+Dr. Brendan			Dr. Brendan
+Dr. Bradford			Dr. Bradford
+Dr. Rudolf			Dr. Rudolf
+Dr. Lara			Dr. Lara
+Dr. Madelaine			Dr. Madelaine
+Dr. Salley			Dr. Salley
+Dr. Micha			Dr. Micha
+Dr. Teddy			Dr. Teddy
+Dr. Coralee			Dr. Coralee
+Dr. Jeff			Dr. Jeff
+Dr. Vena			Dr. Vena
+Dr. Karrie			Dr. Karrie
+Dr. Tobias			Dr. Tobias
+Dr. Celsa			Dr. Celsa
+Dr. Kimberley			Dr. Kimberley
+Dr. Phillip			Dr. Phillip
+Dr. Elias			Dr. Elias
+Dr. Lashanda			Dr. Lashanda
+Dr. Mackenzie			Dr. Mackenzie
+Dr. Kathlyn			Dr. Kathlyn
+Dr. Georgina			Dr. Georgina
+Dr. Beata			Dr. Beata
+Dr. Desiree			Dr. Desiree
+Dr. Jeanice			Dr. Jeanice
+Dr. Mariel			Dr. Mariel
+Dr. Alida			Dr. Alida
+Dr. Jacqualine			Dr. Jacqualine
+Dr. Joaquin			Dr. Joaquin
+Dr. Samuel			Dr. Samuel
+Dr. Malissa			Dr. Malissa
+Dr. Alaina			Dr. Alaina
+Dr. Trinidad			Dr. Trinidad
+Dr. Carlene			Dr. Carlene
+Dr. Melodi			Dr. Melodi
+Dr. Bess			Dr. Bess
+Dr. Chong			Dr. Chong
+Dr. Jani			Dr. Jani
+Dr. Jacquiline			Dr. Jacquiline
+Dr. Hayley			Dr. Hayley
+Dr. Andria			Dr. Andria
+Dr. Irwin			Dr. Irwin
+Dr. Gertude			Dr. Gertude
+Dr. Stefany			Dr. Stefany
+Dr. Rae			Dr. Rae
+Dr. Cruz			Dr. Cruz
+Dr. Maryann			Dr. Maryann
+Dr. Annalisa			Dr. Annalisa
+Dr. Jenee			Dr. Jenee
+
+Result: Success
+
+
+
+
+[Task: 54]
+
+
+Program: (concat 'Dr. ' name)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Dr. Nancy			Dr. Nancy FreeHafer
+Dr. Andrew			Dr. Andrew Cencici
+Dr. Jan			Dr. Jan Kotas
+Dr. Mariya			Dr. Mariya Sergienko
+
+Result: Failed
+
+
+
+
+[Task: 55]
+
+
+Program: (define (add-title name)
+  (concat "Dr. " (substr name 0 (indexof name " " 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Dr. Nancy			define
+Dr. Andrew			define
+Dr. Jan			define
+Dr. Mariya			define
+
+Result: Failed
+
+
+
+
+[Task: 56]
+
+
+Program: (substr _arg_1 (+ (indexof _arg_1 '_' 0) 1) (- (length _arg_1) (+ (indexof _arg_1 '_' 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+maaker.com			maaker.com
+sphynx.uk.co			sphynx.uk.co
+svxn.com			svxn.com
+
+Result: Success
+
+
+
+
+[Task: 57]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 "." -1) 1) (- (length _arg_0) (+ (indexof _arg_0 "." -1) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 58]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "=" 0) (+ 1 (length _arg_0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 59]
+
+
+[Task: 60]
+
+
+Program: (at (split _arg_0 " ") _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 61]
+
+
+Program: (str.to.int (substr _arg_0 (+ (indexof _arg_0 "<" 0) 1) (- (indexof _arg_0 ">" 0) (+ (indexof _arg_0 "<" 0) 1))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 62]
+
+
+Program: (substr _arg_0 (indexof _arg_0 " " 1) (- (length _arg_0) (indexof _arg_0 " " 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+json_acme.com			 email to json_acme.com
+help_robot.com			 help_robot.com for all support requests
+
+Result: Failed
+
+
+
+
+[Task: 63]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "_" 0) (length (substr _arg_0 (indexof _arg_0 "_" 0) (length _arg_0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+_username			_username in the middle
+_name			_name
+_name1			_name1 and _name2
+
+Result: Failed
+
+
+
+
+[Task: 64]
+
+
+Program: (define (f _arg_0 _arg_1)
+  (ite (= _arg_1 1)
+       (indexof _arg_0 "_" 0)
+       (ite (= _arg_1 2)
+            (indexof _arg_0 "_" (indexof _arg_0 "_" 0))
+            (indexof _arg_0 "_" (indexof _arg_0 "_" (indexof _arg_0 "_" 0))))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 65]
+
+
+[Task: 66]
+
+
+Program: (substr name 0 (indexof name ' ' 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy			Nancy
+Andrew			Andrew
+Jan			Jan
+Mariya			Mariya
+Launa			Launa
+Lakenya			Lakenya
+Brendan			Brendan
+Bradford			Bradford
+Rudolf			Rudolf
+Lara			Lara
+Madelaine			Madelaine
+Salley			Salley
+Micha			Micha
+Teddy			Teddy
+Coralee			Coralee
+Jeff			Jeff
+Vena			Vena
+Karrie			Karrie
+Tobias			Tobias
+Celsa			Celsa
+Kimberley			Kimberley
+Phillip			Phillip
+Elias			Elias
+Lashanda			Lashanda
+Mackenzie			Mackenzie
+Kathlyn			Kathlyn
+Georgina			Georgina
+Beata			Beata
+Desiree			Desiree
+Jeanice			Jeanice
+Mariel			Mariel
+Alida			Alida
+Jacqualine			Jacqualine
+Joaquin			Joaquin
+Samuel			Samuel
+Malissa			Malissa
+Alaina			Alaina
+Trinidad			Trinidad
+Carlene			Carlene
+Melodi			Melodi
+Bess			Bess
+Chong			Chong
+Jani			Jani
+Jacquiline			Jacquiline
+Hayley			Hayley
+Andria			Andria
+Irwin			Irwin
+Gertude			Gertude
+Stefany			Stefany
+Rae			Rae
+Cruz			Cruz
+Maryann			Maryann
+Annalisa			Annalisa
+Jenee			Jenee
+
+Result: Success
+
+
+
+
+[Task: 67]
+
+
+Program: (substr name 0 (indexof name " " 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy			Nancy
+Andrew			Andrew
+Jan			Jan
+Mariya			Mariya
+
+Result: Success
+
+
+
+
+[Task: 68]
+
+
+Program: (defun getFirstName (name)
+  (substr name 0 (indexof name " " 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy			defun
+Andrew			defun
+Jan			defun
+Mariya			defun
+
+Result: Failed
+
+
+
+
+[Task: 69]
+
+
+Program: (substr _arg_1 0 (indexof _arg_1 "_" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+achang			achang
+bobt			bobt
+art.lennox			art.lennox
+
+Result: Success
+
+
+
+
+[Task: 70]
+
+
+Program: (replace _arg_0 (substr _arg_0 (indexof _arg_0 "/" 2) (- (length _arg_0) (indexof _arg_0 "/" 2))) "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+https=//abc.com/			https=
+http=//www.abc.com			http=
+http=//chandoo.org/			http=
+
+Result: Failed
+
+
+
+
+[Task: 71]
+
+
+[Task: 72]
+
+
+Program: (ite (= _arg_1 1) 
+    (substr _arg_0 (+ (indexof _arg_0 "," 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "," 0) 1))) 
+    (substr _arg_0 0 (indexof _arg_0 "," 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 73]
+
+
+Program: (ite (contains _arg_0 ' ')
+     (substr _arg_0 0 (indexof _arg_0 ' ' 0))
+     _arg_0)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+The			The
+quick			quick
+			fox
+
+Result: Failed
+
+
+
+
+[Task: 74]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "/n" 0) (length _arg_0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+11/15/2015-follow-up,interested			/n12/3/2015-order placed/n11/15/2015-follow-up,interested
+12/3/2015-order placed			/n12/3/2015-order placed
+11/1/2015 - First call			
+
+Result: Failed
+
+
+
+
+[Task: 75]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 " " 0) 1) (- (length _arg_0) (+ (indexof _arg_0 " " 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Kim			Kim
+Kim			Kim
+Lee			Lee
+
+Result: Success
+
+
+
+
+[Task: 76]
+
+
+Program: (concat (substr _arg_0 (+ 1 (indexof _arg_0 "," 0)) (- (length _arg_0) (+ 1 (indexof _arg_0 "," 0)))) (concat "," (substr _arg_0 0 (indexof _arg_0 "," 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+amy,chang			amy,chang
+bobby,smith			bobby,smith
+aaron,lennox			aaron,lennox
+
+Result: Success
+
+
+
+
+[Task: 77]
+
+
+Program: (defn last-word [_arg_0]
+  (let [words (clojure.string/split _arg_0 #" ")]
+    (last words)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+time			defn
+evil			defn
+life			defn
+
+Result: Failed
+
+
+
+
+[Task: 78]
+
+
+Program: (substr _arg_0 
+        (+ 1 (indexof _arg_0 " " 0)) 
+        (- (- (length _arg_0) 
+               (+ 1 (indexof _arg_0 " " (+ 1 (indexof _arg_0 " " 0))))) 
+           (+ 1 (indexof _arg_0 " " 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+ann			
+			tanaka
+t.			
+r. tom			r
+
+Result: Failed
+
+
+
+
+[Task: 79]
+
+
+Program: (concat 
+    (concat 
+        (at name 0) 
+        ".") 
+    (at 
+        (substr name 
+            (+ 
+                (indexof name " " 0) 
+                1) 
+            1) 
+        0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+N.F.			N.F
+A.C.			A.C
+J.K.			J.K
+M.S.			M.S
+L.W.			L.W
+L.W.			L.W
+L.W.			L.W
+L.E.			L.E
+L.E.			L.E
+L.E.			L.E
+B.H.			B.H
+B.H.			B.H
+B.H.			B.H
+B.L.			B.L
+B.L.			B.L
+B.L.			B.L
+R.A.			R.A
+R.A.			R.A
+R.A.			R.A
+L.C.			L.C
+L.C.			L.C
+L.C.			L.C
+M.G.			M.G
+M.G.			M.G
+M.G.			M.G
+S.H.			S.H
+S.H.			S.H
+S.H.			S.H
+M.J.			M.J
+M.J.			M.J
+M.J.			M.J
+T.B.			T.B
+T.B.			T.B
+T.B.			T.B
+C.S.			C.S
+C.S.			C.S
+C.S.			C.S
+J.Q.			J.Q
+J.Q.			J.Q
+J.Q.			J.Q
+V.B.			V.B
+V.B.			V.B
+V.B.			V.B
+K.L.			K.L
+K.L.			K.L
+K.L.			K.L
+T.D.			T.D
+T.D.			T.D
+T.D.			T.D
+C.H.			C.H
+C.H.			C.H
+C.H.			C.H
+K.H.			K.H
+K.H.			K.H
+K.H.			K.H
+P.R.			P.R
+P.R.			P.R
+P.R.			P.R
+E.N.			E.N
+E.N.			E.N
+E.N.			E.N
+L.C.			L.C
+L.C.			L.C
+L.C.			L.C
+M.S.			M.S
+M.S.			M.S
+M.S.			M.S
+K.E.			K.E
+K.E.			K.E
+K.E.			K.E
+G.B.			G.B
+G.B.			G.B
+G.B.			G.B
+B.M.			B.M
+B.M.			B.M
+B.M.			B.M
+D.S.			D.S
+D.S.			D.S
+D.S.			D.S
+J.S.			J.S
+J.S.			J.S
+J.S.			J.S
+M.J.			M.J
+M.J.			M.J
+M.J.			M.J
+A.B.			A.B
+A.B.			A.B
+A.B.			A.B
+J.O.			J.O
+J.O.			J.O
+J.O.			J.O
+J.C.			J.C
+J.C.			J.C
+J.C.			J.C
+S.R.			S.R
+S.R.			S.R
+S.R.			S.R
+M.M.			M.M
+M.M.			M.M
+M.M.			M.M
+A.P.			A.P
+A.P.			A.P
+A.P.			A.P
+T.M.			T.M
+T.M.			T.M
+T.M.			T.M
+C.G.			C.G
+C.G.			C.G
+C.G.			C.G
+M.C.			M.C
+M.C.			M.C
+M.C.			M.C
+B.C.			B.C
+B.C.			B.C
+B.C.			B.C
+C.A.			C.A
+C.A.			C.A
+C.A.			C.A
+J.R.			J.R
+J.R.			J.R
+J.R.			J.R
+J.H.			J.H
+J.H.			J.H
+J.H.			J.H
+H.M.			H.M
+H.M.			H.M
+H.M.			H.M
+A.S.			A.S
+A.S.			A.S
+A.S.			A.S
+I.C.			I.C
+I.C.			I.C
+I.C.			I.C
+G.M.			G.M
+G.M.			G.M
+G.M.			G.M
+S.R.			S.R
+S.R.			S.R
+S.R.			S.R
+R.M.			R.M
+R.M.			R.M
+R.M.			R.M
+C.L.			C.L
+C.L.			C.L
+C.L.			C.L
+M.C.			M.C
+M.C.			M.C
+M.C.			M.C
+A.G.			A.G
+A.G.			A.G
+A.G.			A.G
+J.P.			J.P
+J.P.			J.P
+J.P.			J.P
+L.W.			L.W
+L.E.			L.E
+B.H.			B.H
+B.L.			B.L
+R.A.			R.A
+L.C.			L.C
+M.G.			M.G
+S.H.			S.H
+M.J.			M.J
+T.B.			T.B
+C.S.			C.S
+J.Q.			J.Q
+V.B.			V.B
+K.L.			K.L
+T.D.			T.D
+C.H.			C.H
+K.H.			K.H
+P.R.			P.R
+E.N.			E.N
+L.C.			L.C
+M.S.			M.S
+K.E.			K.E
+G.B.			G.B
+B.M.			B.M
+D.S.			D.S
+J.S.			J.S
+M.J.			M.J
+A.B.			A.B
+J.O.			J.O
+J.C.			J.C
+S.R.			S.R
+M.M.			M.M
+A.P.			A.P
+T.M.			T.M
+C.G.			C.G
+M.C.			M.C
+B.C.			B.C
+C.A.			C.A
+J.R.			J.R
+J.H.			J.H
+H.M.			H.M
+A.S.			A.S
+I.C.			I.C
+G.M.			G.M
+S.R.			S.R
+R.M.			R.M
+C.L.			C.L
+M.C.			M.C
+A.G.			A.G
+J.P.			J.P
+
+Result: Failed
+
+
+
+
+[Task: 80]
+
+
+Program: (concat (concat (at name 0) ".") (at name (+ 1 (indexof name " " 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+N.F.			N.F
+A.C.			A.C
+J.K.			J.K
+M.S.			M.S
+L.W.			L.W
+L.E.			L.E
+B.H.			B.H
+B.L.			B.L
+R.A.			R.A
+L.C.			L.C
+M.G.			M.G
+S.H.			S.H
+M.J.			M.J
+T.B.			T.B
+C.S.			C.S
+J.Q.			J.Q
+V.B.			V.B
+K.L.			K.L
+T.D.			T.D
+C.H.			C.H
+K.H.			K.H
+P.R.			P.R
+E.N.			E.N
+L.C.			L.C
+M.S.			M.S
+K.E.			K.E
+G.B.			G.B
+B.M.			B.M
+D.S.			D.S
+J.S.			J.S
+M.J.			M.J
+A.B.			A.B
+J.O.			J.O
+J.C.			J.C
+S.R.			S.R
+M.M.			M.M
+A.P.			A.P
+T.M.			T.M
+C.G.			C.G
+M.C.			M.C
+B.C.			B.C
+C.A.			C.A
+J.R.			J.R
+J.H.			J.H
+H.M.			H.M
+A.S.			A.S
+I.C.			I.C
+G.M.			G.M
+S.R.			S.R
+R.M.			R.M
+C.L.			C.L
+M.C.			M.C
+A.G.			A.G
+J.P.			J.P
+
+Result: Failed
+
+
+
+
+[Task: 81]
+
+
+Program: (concat 
+    (concat 
+        (at name 0) 
+        ".") 
+    (concat 
+        (at 
+            (substr name 
+                (+ 1 
+                    (indexof name " " 0)) 
+                (length name)) 
+            0) 
+        "."))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+N.F.			N.F.
+A.C.			A.C.
+J.K.			J.K.
+M.S.			M.S.
+
+Result: Success
+
+
+
+
+[Task: 82]
+
+
+Program: (concat (concat (at name 0) ".") (at name (+ 1 (indexof name " " 0))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+N.F.			N.F
+A.C.			A.C
+J.K.			J.K
+M.S.			M.S
+
+Result: Failed
+
+
+
+
+[Task: 83]
+
+
+Program: (concat (concat _arg_0 (concat ',' ' ')) (concat _arg_1 (concat ',' ' ')) _arg_2)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+figs, apples			figs, , 
+mangos, kiwis, grapes			mangos, kiwis, 
+
+Result: Failed
+
+
+
+
+[Task: 84]
+
+
+Program: (concat (concat _arg_0 ' ') _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+susan chang			susan chang
+aaron kim			aaron kim
+
+Result: Success
+
+
+
+
+[Task: 85]
+
+
+[Task: 86]
+
+
+Program: (substr name (+ (indexof name ' ' 0) 1) (- (length name) (+ (indexof name ' ' 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+FreeHafer			FreeHafer
+Cencici			Cencici
+Kotas			Kotas
+Sergienko			Sergienko
+Withers			Withers
+Edison			Edison
+Hage			Hage
+Lango			Lango
+Akiyama			Akiyama
+Constable			Constable
+Ghoston			Ghoston
+Hornak			Hornak
+Junkin			Junkin
+Bobo			Bobo
+Scalia			Scalia
+Quashie			Quashie
+Babiarz			Babiarz
+Lain			Lain
+Dermody			Dermody
+Hopkins			Hopkins
+Halpern			Halpern
+Rowden			Rowden
+Neil			Neil
+Cortes			Cortes
+Spell			Spell
+Eccleston			Eccleston
+Brescia			Brescia
+Miah			Miah
+Seamons			Seamons
+Soderstrom			Soderstrom
+Jurgens			Jurgens
+Bogle			Bogle
+Olague			Olague
+Clasen			Clasen
+Richert			Richert
+Marcus			Marcus
+Partida			Partida
+Mulloy			Mulloy
+Garrard			Garrard
+Chism			Chism
+Chilcott			Chilcott
+Aylward			Aylward
+Ramthun			Ramthun
+Heintz			Heintz
+Marquess			Marquess
+Spagnoli			Spagnoli
+Covelli			Covelli
+Montiel			Montiel
+Reily			Reily
+Mcgaughey			Mcgaughey
+Latimore			Latimore
+Casler			Casler
+Gregori			Gregori
+Pannell			Pannell
+
+Result: Success
+
+
+
+
+[Task: 87]
+
+
+Program: def get_last_name(name):
+    return (substr name (indexof name ' ' 0) (+ 1 (length (substr name (indexof name ' ' 0) (- (length name) (indexof name ' ' 0))))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+FreeHafer			def
+Cencici			def
+Kotas			def
+Sergienko			def
+
+Result: Failed
+
+
+
+
+[Task: 88]
+
+
+Program: def get_last_name(name):
+    return (substr name (indexof name ' ' 0) (+ 1 (length (substr name (indexof name ' ' 0) (- (length name) (indexof name ' ' 0))))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+FreeHafer			def
+Cencici			def
+Kotas			def
+Sergienko			def
+
+Result: Failed
+
+
+
+
+[Task: 89]
+
+
+Program: _arg_2
+
+Expected Output			GPT Output
+-----------------------------------------------------
+cat			cat
+red			red
+firm			soft
+soft			soft
+
+Result: Failed
+
+
+
+
+[Task: 90]
+
+
+Program: (concat firstname (concat ' ' (concat (substr lastname 0 1) '.')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy F.			Nancy F.
+Andrew C.			Andrew C.
+Jan K.			Jan K.
+Mariya S.			Mariya S.
+Launa W.			Launa W.
+Launa W.			Launa W.
+Launa W.			Launa W.
+Lakenya E.			Lakenya E.
+Lakenya E.			Lakenya E.
+Lakenya E.			Lakenya E.
+Brendan H.			Brendan H.
+Brendan H.			Brendan H.
+Brendan H.			Brendan H.
+Bradford L.			Bradford L.
+Bradford L.			Bradford L.
+Bradford L.			Bradford L.
+Rudolf A.			Rudolf A.
+Rudolf A.			Rudolf A.
+Rudolf A.			Rudolf A.
+Lara C.			Lara C.
+Lara C.			Lara C.
+Lara C.			Lara C.
+Madelaine G.			Madelaine G.
+Madelaine G.			Madelaine G.
+Madelaine G.			Madelaine G.
+Salley H.			Salley H.
+Salley H.			Salley H.
+Salley H.			Salley H.
+Micha J.			Micha J.
+Micha J.			Micha J.
+Micha J.			Micha J.
+Teddy B.			Teddy B.
+Teddy B.			Teddy B.
+Teddy B.			Teddy B.
+Coralee S.			Coralee S.
+Coralee S.			Coralee S.
+Coralee S.			Coralee S.
+Jeff Q.			Jeff Q.
+Jeff Q.			Jeff Q.
+Jeff Q.			Jeff Q.
+Vena B.			Vena B.
+Vena B.			Vena B.
+Vena B.			Vena B.
+Karrie L.			Karrie L.
+Karrie L.			Karrie L.
+Karrie L.			Karrie L.
+Tobias D.			Tobias D.
+Tobias D.			Tobias D.
+Tobias D.			Tobias D.
+Celsa H.			Celsa H.
+Celsa H.			Celsa H.
+Celsa H.			Celsa H.
+Kimberley H.			Kimberley H.
+Kimberley H.			Kimberley H.
+Kimberley H.			Kimberley H.
+Phillip R.			Phillip R.
+Phillip R.			Phillip R.
+Phillip R.			Phillip R.
+Elias N.			Elias N.
+Elias N.			Elias N.
+Elias N.			Elias N.
+Lashanda C.			Lashanda C.
+Lashanda C.			Lashanda C.
+Lashanda C.			Lashanda C.
+Mackenzie S.			Mackenzie S.
+Mackenzie S.			Mackenzie S.
+Mackenzie S.			Mackenzie S.
+Kathlyn E.			Kathlyn E.
+Kathlyn E.			Kathlyn E.
+Kathlyn E.			Kathlyn E.
+Georgina B.			Georgina B.
+Georgina B.			Georgina B.
+Georgina B.			Georgina B.
+Beata M.			Beata M.
+Beata M.			Beata M.
+Beata M.			Beata M.
+Desiree S.			Desiree S.
+Desiree S.			Desiree S.
+Desiree S.			Desiree S.
+Jeanice S.			Jeanice S.
+Jeanice S.			Jeanice S.
+Jeanice S.			Jeanice S.
+Mariel J.			Mariel J.
+Mariel J.			Mariel J.
+Mariel J.			Mariel J.
+Alida B.			Alida B.
+Alida B.			Alida B.
+Alida B.			Alida B.
+Jacqualine O.			Jacqualine O.
+Jacqualine O.			Jacqualine O.
+Jacqualine O.			Jacqualine O.
+Joaquin C.			Joaquin C.
+Joaquin C.			Joaquin C.
+Joaquin C.			Joaquin C.
+Samuel R.			Samuel R.
+Samuel R.			Samuel R.
+Samuel R.			Samuel R.
+Malissa M.			Malissa M.
+Malissa M.			Malissa M.
+Malissa M.			Malissa M.
+Alaina P.			Alaina P.
+Alaina P.			Alaina P.
+Alaina P.			Alaina P.
+Trinidad M.			Trinidad M.
+Trinidad M.			Trinidad M.
+Trinidad M.			Trinidad M.
+Carlene G.			Carlene G.
+Carlene G.			Carlene G.
+Carlene G.			Carlene G.
+Melodi C.			Melodi C.
+Melodi C.			Melodi C.
+Melodi C.			Melodi C.
+Bess C.			Bess C.
+Bess C.			Bess C.
+Bess C.			Bess C.
+Chong A.			Chong A.
+Chong A.			Chong A.
+Chong A.			Chong A.
+Jani R.			Jani R.
+Jani R.			Jani R.
+Jani R.			Jani R.
+Jacquiline H.			Jacquiline H.
+Jacquiline H.			Jacquiline H.
+Jacquiline H.			Jacquiline H.
+Hayley M.			Hayley M.
+Hayley M.			Hayley M.
+Hayley M.			Hayley M.
+Andria S.			Andria S.
+Andria S.			Andria S.
+Andria S.			Andria S.
+Irwin C.			Irwin C.
+Irwin C.			Irwin C.
+Irwin C.			Irwin C.
+Gertude M.			Gertude M.
+Gertude M.			Gertude M.
+Gertude M.			Gertude M.
+Stefany R.			Stefany R.
+Stefany R.			Stefany R.
+Stefany R.			Stefany R.
+Rae M.			Rae M.
+Rae M.			Rae M.
+Rae M.			Rae M.
+Cruz L.			Cruz L.
+Cruz L.			Cruz L.
+Cruz L.			Cruz L.
+Maryann C.			Maryann C.
+Maryann C.			Maryann C.
+Maryann C.			Maryann C.
+Annalisa G.			Annalisa G.
+Annalisa G.			Annalisa G.
+Annalisa G.			Annalisa G.
+Jenee P.			Jenee P.
+Jenee P.			Jenee P.
+Jenee P.			Jenee P.
+Launa W.			Launa W.
+Lakenya E.			Lakenya E.
+Brendan H.			Brendan H.
+Bradford L.			Bradford L.
+Rudolf A.			Rudolf A.
+Lara C.			Lara C.
+Madelaine G.			Madelaine G.
+Salley H.			Salley H.
+Micha J.			Micha J.
+Teddy B.			Teddy B.
+Coralee S.			Coralee S.
+Jeff Q.			Jeff Q.
+Vena B.			Vena B.
+Karrie L.			Karrie L.
+Tobias D.			Tobias D.
+Celsa H.			Celsa H.
+Kimberley H.			Kimberley H.
+Phillip R.			Phillip R.
+Elias N.			Elias N.
+Lashanda C.			Lashanda C.
+Mackenzie S.			Mackenzie S.
+Kathlyn E.			Kathlyn E.
+Georgina B.			Georgina B.
+Beata M.			Beata M.
+Desiree S.			Desiree S.
+Jeanice S.			Jeanice S.
+Mariel J.			Mariel J.
+Alida B.			Alida B.
+Jacqualine O.			Jacqualine O.
+Joaquin C.			Joaquin C.
+Samuel R.			Samuel R.
+Malissa M.			Malissa M.
+Alaina P.			Alaina P.
+Trinidad M.			Trinidad M.
+Carlene G.			Carlene G.
+Melodi C.			Melodi C.
+Bess C.			Bess C.
+Chong A.			Chong A.
+Jani R.			Jani R.
+Jacquiline H.			Jacquiline H.
+Hayley M.			Hayley M.
+Andria S.			Andria S.
+Irwin C.			Irwin C.
+Gertude M.			Gertude M.
+Stefany R.			Stefany R.
+Rae M.			Rae M.
+Cruz L.			Cruz L.
+Maryann C.			Maryann C.
+Annalisa G.			Annalisa G.
+Jenee P.			Jenee P.
+
+Result: Success
+
+
+
+
+[Task: 91]
+
+
+Program: (concat firstname (concat ' ' (concat (at lastname 0) '.')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy F.			Nancy F.
+Andrew C.			Andrew C.
+Jan K.			Jan K.
+Mariya S.			Mariya S.
+Launa W.			Launa W.
+Lakenya E.			Lakenya E.
+Brendan H.			Brendan H.
+Bradford L.			Bradford L.
+Rudolf A.			Rudolf A.
+Lara C.			Lara C.
+Madelaine G.			Madelaine G.
+Salley H.			Salley H.
+Micha J.			Micha J.
+Teddy B.			Teddy B.
+Coralee S.			Coralee S.
+Jeff Q.			Jeff Q.
+Vena B.			Vena B.
+Karrie L.			Karrie L.
+Tobias D.			Tobias D.
+Celsa H.			Celsa H.
+Kimberley H.			Kimberley H.
+Phillip R.			Phillip R.
+Elias N.			Elias N.
+Lashanda C.			Lashanda C.
+Mackenzie S.			Mackenzie S.
+Kathlyn E.			Kathlyn E.
+Georgina B.			Georgina B.
+Beata M.			Beata M.
+Desiree S.			Desiree S.
+Jeanice S.			Jeanice S.
+Mariel J.			Mariel J.
+Alida B.			Alida B.
+Jacqualine O.			Jacqualine O.
+Joaquin C.			Joaquin C.
+Samuel R.			Samuel R.
+Malissa M.			Malissa M.
+Alaina P.			Alaina P.
+Trinidad M.			Trinidad M.
+Carlene G.			Carlene G.
+Melodi C.			Melodi C.
+Bess C.			Bess C.
+Chong A.			Chong A.
+Jani R.			Jani R.
+Jacquiline H.			Jacquiline H.
+Hayley M.			Hayley M.
+Andria S.			Andria S.
+Irwin C.			Irwin C.
+Gertude M.			Gertude M.
+Stefany R.			Stefany R.
+Rae M.			Rae M.
+Cruz L.			Cruz L.
+Maryann C.			Maryann C.
+Annalisa G.			Annalisa G.
+Jenee P.			Jenee P.
+
+Result: Success
+
+
+
+
+[Task: 92]
+
+
+Program: (concat firstname (concat ' ' (concat (at lastname 0) '.')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy F.			Nancy F.
+Andrew C.			Andrew C.
+Jan K.			Jan K.
+Mariya S.			Mariya S.
+
+Result: Success
+
+
+
+
+[Task: 93]
+
+
+Program: (concat firstname (concat ' ' (concat (at lastname 0) '.')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy F.			Nancy F.
+Andrew C.			Andrew C.
+Jan K.			Jan K.
+Mariya S.			Mariya S.
+
+Result: Success
+
+
+
+
+[Task: 94]
+
+
+[Task: 95]
+
+
+Program: (concat 
+    (concat 
+        (concat 
+            (substr firstname 0 1) 
+            "."
+        ) 
+        " "
+    ) 
+    lastname
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+L. Withers			L. Withers
+L. Edison			L. Edison
+B. Hage			B. Hage
+B. Lango			B. Lango
+R. Akiyama			R. Akiyama
+L. Constable			L. Constable
+M. Ghoston			M. Ghoston
+S. Hornak			S. Hornak
+M. Junkin			M. Junkin
+T. Bobo			T. Bobo
+C. Scalia			C. Scalia
+J. Quashie			J. Quashie
+V. Babiarz			V. Babiarz
+K. Lain			K. Lain
+T. Dermody			T. Dermody
+C. Hopkins			C. Hopkins
+K. Halpern			K. Halpern
+P. Rowden			P. Rowden
+E. Neil			E. Neil
+L. Cortes			L. Cortes
+M. Spell			M. Spell
+K. Eccleston			K. Eccleston
+G. Brescia			G. Brescia
+B. Miah			B. Miah
+D. Seamons			D. Seamons
+J. Soderstrom			J. Soderstrom
+M. Jurgens			M. Jurgens
+A. Bogle			A. Bogle
+J. Olague			J. Olague
+J. Clasen			J. Clasen
+S. Richert			S. Richert
+M. Marcus			M. Marcus
+A. Partida			A. Partida
+T. Mulloy			T. Mulloy
+C. Garrard			C. Garrard
+M. Chism			M. Chism
+B. Chilcott			B. Chilcott
+C. Aylward			C. Aylward
+J. Ramthun			J. Ramthun
+J. Heintz			J. Heintz
+H. Marquess			H. Marquess
+A. Spagnoli			A. Spagnoli
+I. Covelli			I. Covelli
+G. Montiel			G. Montiel
+S. Reily			S. Reily
+R. Mcgaughey			R. Mcgaughey
+C. Latimore			C. Latimore
+M. Casler			M. Casler
+A. Gregori			A. Gregori
+J. Pannell			J. Pannell
+
+Result: Success
+
+
+
+
+[Task: 96]
+
+
+Program: (concat 
+    (concat 
+        (substr firstname 0 1) 
+        "."
+    ) 
+    lastname
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+L. Withers			L.Withers
+L. Edison			L.Edison
+B. Hage			B.Hage
+B. Lango			B.Lango
+R. Akiyama			R.Akiyama
+L. Constable			L.Constable
+
+Result: Failed
+
+
+
+
+[Task: 97]
+
+
+Program: (concat 
+    (concat 
+        (substr firstname 0 1) 
+        "."
+    ) 
+    (concat 
+        " " 
+        lastname
+    )
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+L. Withers			L. Withers
+L. Edison			L. Edison
+B. Hage			B. Hage
+B. Lango			B. Lango
+R. Akiyama			R. Akiyama
+L. Constable			L. Constable
+
+Result: Success
+
+
+
+
+[Task: 98]
+
+
+Program: (concat lastname ", " (concat (substr firstname 0 1) "."))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers, L.			Withers, 
+Withers, L.			Withers, 
+Withers, L.			Withers, 
+Edison, L.			Edison, 
+Edison, L.			Edison, 
+Edison, L.			Edison, 
+Hage, B.			Hage, 
+Hage, B.			Hage, 
+Hage, B.			Hage, 
+Lango, B.			Lango, 
+Lango, B.			Lango, 
+Lango, B.			Lango, 
+Akiyama, R.			Akiyama, 
+Akiyama, R.			Akiyama, 
+Akiyama, R.			Akiyama, 
+Constable, L.			Constable, 
+Constable, L.			Constable, 
+Constable, L.			Constable, 
+Ghoston, M.			Ghoston, 
+Ghoston, M.			Ghoston, 
+Ghoston, M.			Ghoston, 
+Hornak, S.			Hornak, 
+Hornak, S.			Hornak, 
+Hornak, S.			Hornak, 
+Junkin, M.			Junkin, 
+Junkin, M.			Junkin, 
+Junkin, M.			Junkin, 
+Bobo, T.			Bobo, 
+Bobo, T.			Bobo, 
+Bobo, T.			Bobo, 
+Scalia, C.			Scalia, 
+Scalia, C.			Scalia, 
+Scalia, C.			Scalia, 
+Quashie, J.			Quashie, 
+Quashie, J.			Quashie, 
+Quashie, J.			Quashie, 
+Babiarz, V.			Babiarz, 
+Babiarz, V.			Babiarz, 
+Babiarz, V.			Babiarz, 
+Lain, K.			Lain, 
+Lain, K.			Lain, 
+Lain, K.			Lain, 
+Dermody, T.			Dermody, 
+Dermody, T.			Dermody, 
+Dermody, T.			Dermody, 
+Hopkins, C.			Hopkins, 
+Hopkins, C.			Hopkins, 
+Hopkins, C.			Hopkins, 
+Halpern, K.			Halpern, 
+Halpern, K.			Halpern, 
+Halpern, K.			Halpern, 
+Rowden, P.			Rowden, 
+Rowden, P.			Rowden, 
+Rowden, P.			Rowden, 
+Neil, E.			Neil, 
+Neil, E.			Neil, 
+Neil, E.			Neil, 
+Cortes, L.			Cortes, 
+Cortes, L.			Cortes, 
+Cortes, L.			Cortes, 
+Spell, M.			Spell, 
+Spell, M.			Spell, 
+Spell, M.			Spell, 
+Eccleston, K.			Eccleston, 
+Eccleston, K.			Eccleston, 
+Eccleston, K.			Eccleston, 
+Brescia, G.			Brescia, 
+Brescia, G.			Brescia, 
+Brescia, G.			Brescia, 
+Miah, B.			Miah, 
+Miah, B.			Miah, 
+Miah, B.			Miah, 
+Seamons, D.			Seamons, 
+Seamons, D.			Seamons, 
+Seamons, D.			Seamons, 
+Soderstrom, J.			Soderstrom, 
+Soderstrom, J.			Soderstrom, 
+Soderstrom, J.			Soderstrom, 
+Jurgens, M.			Jurgens, 
+Jurgens, M.			Jurgens, 
+Jurgens, M.			Jurgens, 
+Bogle, A.			Bogle, 
+Bogle, A.			Bogle, 
+Bogle, A.			Bogle, 
+Olague, J.			Olague, 
+Olague, J.			Olague, 
+Olague, J.			Olague, 
+Clasen, J.			Clasen, 
+Clasen, J.			Clasen, 
+Clasen, J.			Clasen, 
+Richert, S.			Richert, 
+Richert, S.			Richert, 
+Richert, S.			Richert, 
+Marcus, M.			Marcus, 
+Marcus, M.			Marcus, 
+Marcus, M.			Marcus, 
+Partida, A.			Partida, 
+Partida, A.			Partida, 
+Partida, A.			Partida, 
+Mulloy, T.			Mulloy, 
+Mulloy, T.			Mulloy, 
+Mulloy, T.			Mulloy, 
+Garrard, C.			Garrard, 
+Garrard, C.			Garrard, 
+Garrard, C.			Garrard, 
+Chism, M.			Chism, 
+Chism, M.			Chism, 
+Chism, M.			Chism, 
+Chilcott, B.			Chilcott, 
+Chilcott, B.			Chilcott, 
+Chilcott, B.			Chilcott, 
+Aylward, C.			Aylward, 
+Aylward, C.			Aylward, 
+Aylward, C.			Aylward, 
+Ramthun, J.			Ramthun, 
+Ramthun, J.			Ramthun, 
+Ramthun, J.			Ramthun, 
+Heintz, J.			Heintz, 
+Heintz, J.			Heintz, 
+Heintz, J.			Heintz, 
+Marquess, H.			Marquess, 
+Marquess, H.			Marquess, 
+Marquess, H.			Marquess, 
+Spagnoli, A.			Spagnoli, 
+Spagnoli, A.			Spagnoli, 
+Spagnoli, A.			Spagnoli, 
+Covelli, I.			Covelli, 
+Covelli, I.			Covelli, 
+Covelli, I.			Covelli, 
+Montiel, G.			Montiel, 
+Montiel, G.			Montiel, 
+Montiel, G.			Montiel, 
+Reily, S.			Reily, 
+Reily, S.			Reily, 
+Reily, S.			Reily, 
+Mcgaughey, R.			Mcgaughey, 
+Mcgaughey, R.			Mcgaughey, 
+Mcgaughey, R.			Mcgaughey, 
+Latimore, C.			Latimore, 
+Latimore, C.			Latimore, 
+Latimore, C.			Latimore, 
+Casler, M.			Casler, 
+Casler, M.			Casler, 
+Casler, M.			Casler, 
+Gregori, A.			Gregori, 
+Gregori, A.			Gregori, 
+Gregori, A.			Gregori, 
+Pannell, J.			Pannell, 
+Pannell, J.			Pannell, 
+Pannell, J.			Pannell, 
+Withers, L.			Withers, 
+Edison, L.			Edison, 
+Hage, B.			Hage, 
+Lango, B.			Lango, 
+Akiyama, R.			Akiyama, 
+Constable, L.			Constable, 
+Ghoston, M.			Ghoston, 
+Hornak, S.			Hornak, 
+Junkin, M.			Junkin, 
+Bobo, T.			Bobo, 
+Scalia, C.			Scalia, 
+Quashie, J.			Quashie, 
+Babiarz, V.			Babiarz, 
+Lain, K.			Lain, 
+Dermody, T.			Dermody, 
+Hopkins, C.			Hopkins, 
+Halpern, K.			Halpern, 
+Rowden, P.			Rowden, 
+Neil, E.			Neil, 
+Cortes, L.			Cortes, 
+Spell, M.			Spell, 
+Eccleston, K.			Eccleston, 
+Brescia, G.			Brescia, 
+Miah, B.			Miah, 
+Seamons, D.			Seamons, 
+Soderstrom, J.			Soderstrom, 
+Jurgens, M.			Jurgens, 
+Bogle, A.			Bogle, 
+Olague, J.			Olague, 
+Clasen, J.			Clasen, 
+Richert, S.			Richert, 
+Marcus, M.			Marcus, 
+Partida, A.			Partida, 
+Mulloy, T.			Mulloy, 
+Garrard, C.			Garrard, 
+Chism, M.			Chism, 
+Chilcott, B.			Chilcott, 
+Aylward, C.			Aylward, 
+Ramthun, J.			Ramthun, 
+Heintz, J.			Heintz, 
+Marquess, H.			Marquess, 
+Spagnoli, A.			Spagnoli, 
+Covelli, I.			Covelli, 
+Montiel, G.			Montiel, 
+Reily, S.			Reily, 
+Mcgaughey, R.			Mcgaughey, 
+Latimore, C.			Latimore, 
+Casler, M.			Casler, 
+Gregori, A.			Gregori, 
+Pannell, J.			Pannell, 
+
+Result: Failed
+
+
+
+
+[Task: 99]
+
+
+Program: (concat lastname (concat ", " (concat (at firstname 0) ".")))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers, L.			Withers, L.
+Edison, L.			Edison, L.
+Hage, B.			Hage, B.
+Lango, B.			Lango, B.
+Akiyama, R.			Akiyama, R.
+Constable, L.			Constable, L.
+Ghoston, M.			Ghoston, M.
+Hornak, S.			Hornak, S.
+Junkin, M.			Junkin, M.
+Bobo, T.			Bobo, T.
+Scalia, C.			Scalia, C.
+Quashie, J.			Quashie, J.
+Babiarz, V.			Babiarz, V.
+Lain, K.			Lain, K.
+Dermody, T.			Dermody, T.
+Hopkins, C.			Hopkins, C.
+Halpern, K.			Halpern, K.
+Rowden, P.			Rowden, P.
+Neil, E.			Neil, E.
+Cortes, L.			Cortes, L.
+Spell, M.			Spell, M.
+Eccleston, K.			Eccleston, K.
+Brescia, G.			Brescia, G.
+Miah, B.			Miah, B.
+Seamons, D.			Seamons, D.
+Soderstrom, J.			Soderstrom, J.
+Jurgens, M.			Jurgens, M.
+Bogle, A.			Bogle, A.
+Olague, J.			Olague, J.
+Clasen, J.			Clasen, J.
+Richert, S.			Richert, S.
+Marcus, M.			Marcus, M.
+Partida, A.			Partida, A.
+Mulloy, T.			Mulloy, T.
+Garrard, C.			Garrard, C.
+Chism, M.			Chism, M.
+Chilcott, B.			Chilcott, B.
+Aylward, C.			Aylward, C.
+Ramthun, J.			Ramthun, J.
+Heintz, J.			Heintz, J.
+Marquess, H.			Marquess, H.
+Spagnoli, A.			Spagnoli, A.
+Covelli, I.			Covelli, I.
+Montiel, G.			Montiel, G.
+Reily, S.			Reily, S.
+Mcgaughey, R.			Mcgaughey, R.
+Latimore, C.			Latimore, C.
+Casler, M.			Casler, M.
+Gregori, A.			Gregori, A.
+Pannell, J.			Pannell, J.
+
+Result: Success
+
+
+
+
+[Task: 100]
+
+
+Program: (concat (concat lastname ", ") (at firstname 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers, L.			Withers, L
+Edison, L.			Edison, L
+Hage, B.			Hage, B
+Lango, B.			Lango, B
+Akiyama, R.			Akiyama, R
+
+Result: Failed
+
+
+
+
+[Task: 101]
+
+
+Program: (concat (concat lastname ", ") (at firstname 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers, L.			Withers, L
+Edison, L.			Edison, L
+Hage, B.			Hage, B
+Lango, B.			Lango, B
+Akiyama, R.			Akiyama, R
+
+Result: Failed
+
+
+
+
+[Task: 102]
+
+
+Program: (concat firstname ' ' lastname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Nancy FreeHafer			Nancy 
+Andrew Cencici			Andrew 
+Jan Kotas			Jan 
+Mariya Sergienko			Mariya 
+Launa Withers			Launa 
+Launa Withers			Launa 
+Launa Withers			Launa 
+Lakenya Edison			Lakenya 
+Lakenya Edison			Lakenya 
+Lakenya Edison			Lakenya 
+Brendan Hage			Brendan 
+Brendan Hage			Brendan 
+Brendan Hage			Brendan 
+Bradford Lango			Bradford 
+Bradford Lango			Bradford 
+Bradford Lango			Bradford 
+Rudolf Akiyama			Rudolf 
+Rudolf Akiyama			Rudolf 
+Rudolf Akiyama			Rudolf 
+Lara Constable			Lara 
+Lara Constable			Lara 
+Lara Constable			Lara 
+Madelaine Ghoston			Madelaine 
+Madelaine Ghoston			Madelaine 
+Madelaine Ghoston			Madelaine 
+Salley Hornak			Salley 
+Salley Hornak			Salley 
+Salley Hornak			Salley 
+Micha Junkin			Micha 
+Micha Junkin			Micha 
+Micha Junkin			Micha 
+Teddy Bobo			Teddy 
+Teddy Bobo			Teddy 
+Teddy Bobo			Teddy 
+Coralee Scalia			Coralee 
+Coralee Scalia			Coralee 
+Coralee Scalia			Coralee 
+Jeff Quashie			Jeff 
+Jeff Quashie			Jeff 
+Jeff Quashie			Jeff 
+Vena Babiarz			Vena 
+Vena Babiarz			Vena 
+Vena Babiarz			Vena 
+Karrie Lain			Karrie 
+Karrie Lain			Karrie 
+Karrie Lain			Karrie 
+Tobias Dermody			Tobias 
+Tobias Dermody			Tobias 
+Tobias Dermody			Tobias 
+Celsa Hopkins			Celsa 
+Celsa Hopkins			Celsa 
+Celsa Hopkins			Celsa 
+Kimberley Halpern			Kimberley 
+Kimberley Halpern			Kimberley 
+Kimberley Halpern			Kimberley 
+Phillip Rowden			Phillip 
+Phillip Rowden			Phillip 
+Phillip Rowden			Phillip 
+Elias Neil			Elias 
+Elias Neil			Elias 
+Elias Neil			Elias 
+Lashanda Cortes			Lashanda 
+Lashanda Cortes			Lashanda 
+Lashanda Cortes			Lashanda 
+Mackenzie Spell			Mackenzie 
+Mackenzie Spell			Mackenzie 
+Mackenzie Spell			Mackenzie 
+Kathlyn Eccleston			Kathlyn 
+Kathlyn Eccleston			Kathlyn 
+Kathlyn Eccleston			Kathlyn 
+Georgina Brescia			Georgina 
+Georgina Brescia			Georgina 
+Georgina Brescia			Georgina 
+Beata Miah			Beata 
+Beata Miah			Beata 
+Beata Miah			Beata 
+Desiree Seamons			Desiree 
+Desiree Seamons			Desiree 
+Desiree Seamons			Desiree 
+Jeanice Soderstrom			Jeanice 
+Jeanice Soderstrom			Jeanice 
+Jeanice Soderstrom			Jeanice 
+Mariel Jurgens			Mariel 
+Mariel Jurgens			Mariel 
+Mariel Jurgens			Mariel 
+Alida Bogle			Alida 
+Alida Bogle			Alida 
+Alida Bogle			Alida 
+Jacqualine Olague			Jacqualine 
+Jacqualine Olague			Jacqualine 
+Jacqualine Olague			Jacqualine 
+Joaquin Clasen			Joaquin 
+Joaquin Clasen			Joaquin 
+Joaquin Clasen			Joaquin 
+Samuel Richert			Samuel 
+Samuel Richert			Samuel 
+Samuel Richert			Samuel 
+Malissa Marcus			Malissa 
+Malissa Marcus			Malissa 
+Malissa Marcus			Malissa 
+Alaina Partida			Alaina 
+Alaina Partida			Alaina 
+Alaina Partida			Alaina 
+Trinidad Mulloy			Trinidad 
+Trinidad Mulloy			Trinidad 
+Trinidad Mulloy			Trinidad 
+Carlene Garrard			Carlene 
+Carlene Garrard			Carlene 
+Carlene Garrard			Carlene 
+Melodi Chism			Melodi 
+Melodi Chism			Melodi 
+Melodi Chism			Melodi 
+Bess Chilcott			Bess 
+Bess Chilcott			Bess 
+Bess Chilcott			Bess 
+Chong Aylward			Chong 
+Chong Aylward			Chong 
+Chong Aylward			Chong 
+Jani Ramthun			Jani 
+Jani Ramthun			Jani 
+Jani Ramthun			Jani 
+Jacquiline Heintz			Jacquiline 
+Jacquiline Heintz			Jacquiline 
+Jacquiline Heintz			Jacquiline 
+Hayley Marquess			Hayley 
+Hayley Marquess			Hayley 
+Hayley Marquess			Hayley 
+Andria Spagnoli			Andria 
+Andria Spagnoli			Andria 
+Andria Spagnoli			Andria 
+Irwin Covelli			Irwin 
+Irwin Covelli			Irwin 
+Irwin Covelli			Irwin 
+Gertude Montiel			Gertude 
+Gertude Montiel			Gertude 
+Gertude Montiel			Gertude 
+Stefany Reily			Stefany 
+Stefany Reily			Stefany 
+Stefany Reily			Stefany 
+Rae Mcgaughey			Rae 
+Rae Mcgaughey			Rae 
+Rae Mcgaughey			Rae 
+Cruz Latimore			Cruz 
+Cruz Latimore			Cruz 
+Cruz Latimore			Cruz 
+Maryann Casler			Maryann 
+Maryann Casler			Maryann 
+Maryann Casler			Maryann 
+Annalisa Gregori			Annalisa 
+Annalisa Gregori			Annalisa 
+Annalisa Gregori			Annalisa 
+Jenee Pannell			Jenee 
+Jenee Pannell			Jenee 
+Jenee Pannell			Jenee 
+Launa Withers			Launa 
+Lakenya Edison			Lakenya 
+Brendan Hage			Brendan 
+Bradford Lango			Bradford 
+Rudolf Akiyama			Rudolf 
+Lara Constable			Lara 
+Madelaine Ghoston			Madelaine 
+Salley Hornak			Salley 
+Micha Junkin			Micha 
+Teddy Bobo			Teddy 
+Coralee Scalia			Coralee 
+Jeff Quashie			Jeff 
+Vena Babiarz			Vena 
+Karrie Lain			Karrie 
+Tobias Dermody			Tobias 
+Celsa Hopkins			Celsa 
+Kimberley Halpern			Kimberley 
+Phillip Rowden			Phillip 
+Elias Neil			Elias 
+Lashanda Cortes			Lashanda 
+Mackenzie Spell			Mackenzie 
+Kathlyn Eccleston			Kathlyn 
+Georgina Brescia			Georgina 
+Beata Miah			Beata 
+Desiree Seamons			Desiree 
+Jeanice Soderstrom			Jeanice 
+Mariel Jurgens			Mariel 
+Alida Bogle			Alida 
+Jacqualine Olague			Jacqualine 
+Joaquin Clasen			Joaquin 
+Samuel Richert			Samuel 
+Malissa Marcus			Malissa 
+Alaina Partida			Alaina 
+Trinidad Mulloy			Trinidad 
+Carlene Garrard			Carlene 
+Melodi Chism			Melodi 
+Bess Chilcott			Bess 
+Chong Aylward			Chong 
+Jani Ramthun			Jani 
+Jacquiline Heintz			Jacquiline 
+Hayley Marquess			Hayley 
+Andria Spagnoli			Andria 
+Irwin Covelli			Irwin 
+Gertude Montiel			Gertude 
+Stefany Reily			Stefany 
+Rae Mcgaughey			Rae 
+Cruz Latimore			Cruz 
+Maryann Casler			Maryann 
+Annalisa Gregori			Annalisa 
+Jenee Pannell			Jenee 
+
+Result: Failed
+
+
+
+
+[Task: 103]
+
+
+Program: (concat (concat firstname ' ') lastname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Launa Withers			Launa Withers
+Lakenya Edison			Lakenya Edison
+Brendan Hage			Brendan Hage
+Bradford Lango			Bradford Lango
+Rudolf Akiyama			Rudolf Akiyama
+Lara Constable			Lara Constable
+Madelaine Ghoston			Madelaine Ghoston
+Salley Hornak			Salley Hornak
+Micha Junkin			Micha Junkin
+Teddy Bobo			Teddy Bobo
+Coralee Scalia			Coralee Scalia
+Jeff Quashie			Jeff Quashie
+Vena Babiarz			Vena Babiarz
+Karrie Lain			Karrie Lain
+Tobias Dermody			Tobias Dermody
+Celsa Hopkins			Celsa Hopkins
+Kimberley Halpern			Kimberley Halpern
+Phillip Rowden			Phillip Rowden
+Elias Neil			Elias Neil
+Lashanda Cortes			Lashanda Cortes
+Mackenzie Spell			Mackenzie Spell
+Kathlyn Eccleston			Kathlyn Eccleston
+Georgina Brescia			Georgina Brescia
+Beata Miah			Beata Miah
+Desiree Seamons			Desiree Seamons
+Jeanice Soderstrom			Jeanice Soderstrom
+Mariel Jurgens			Mariel Jurgens
+Alida Bogle			Alida Bogle
+Jacqualine Olague			Jacqualine Olague
+Joaquin Clasen			Joaquin Clasen
+Samuel Richert			Samuel Richert
+Malissa Marcus			Malissa Marcus
+Alaina Partida			Alaina Partida
+Trinidad Mulloy			Trinidad Mulloy
+Carlene Garrard			Carlene Garrard
+Melodi Chism			Melodi Chism
+Bess Chilcott			Bess Chilcott
+Chong Aylward			Chong Aylward
+Jani Ramthun			Jani Ramthun
+Jacquiline Heintz			Jacquiline Heintz
+Hayley Marquess			Hayley Marquess
+Andria Spagnoli			Andria Spagnoli
+Irwin Covelli			Irwin Covelli
+Gertude Montiel			Gertude Montiel
+Stefany Reily			Stefany Reily
+Rae Mcgaughey			Rae Mcgaughey
+Cruz Latimore			Cruz Latimore
+Maryann Casler			Maryann Casler
+Annalisa Gregori			Annalisa Gregori
+Jenee Pannell			Jenee Pannell
+
+Result: Success
+
+
+
+
+[Task: 104]
+
+
+Program: (concat (concat firstname ' ') lastname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Launa Withers			Launa Withers
+Lakenya Edison			Lakenya Edison
+Brendan Hage			Brendan Hage
+Bradford Lango			Bradford Lango
+Rudolf Akiyama			Rudolf Akiyama
+Lara Constable			Lara Constable
+
+Result: Success
+
+
+
+
+[Task: 105]
+
+
+Program: (concat (concat firstname ' ') lastname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Launa Withers			Launa Withers
+Lakenya Edison			Lakenya Edison
+Brendan Hage			Brendan Hage
+Bradford Lango			Bradford Lango
+Rudolf Akiyama			Rudolf Akiyama
+Lara Constable			Lara Constable
+
+Result: Success
+
+
+
+
+[Task: 106]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 107]
+
+
+Program: (concat 
+    (substr name 0 (+ 2 (indexof name " " 0))) 
+    "(" 
+    (substr name (+ 2 (indexof name " " 0)) 3) 
+    ") " 
+    (substr name (+ 6 (indexof name " " 0)) (- (length name) (+ 6 (indexof name " " 0))))
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
++106 (769) 858-438			+106 7
++83 (973) 757-831			+83 9
++62 (647) 787-775			+62 6
++172 (027) 507-632			+172 0
++72 (001) 050-856			+72 0
++95 (310) 537-401			+95 3
++6 (775) 969-238			+6 7
++174 (594) 539-946			+174 5
++155 (927) 275-860			+155 9
++167 (405) 461-331			+167 4
++10 (538) 347-401			+10 5
++60 (971) 986-103			+60 9
++13 (258) 276-941			+13 2
++2 (604) 746-137			+2 6
++25 (998) 898-180			+25 9
++151 (862) 946-541			+151 8
++118 (165) 041-038			+118 1
++144 (170) 592-272			+144 1
++94 (462) 008-482			+94 4
++82 (685) 122-086			+82 6
++82 (675) 366-472			+82 6
++80 (066) 433-096			+80 0
++163 (039) 436-166			+163 0
++138 (808) 083-074			+138 8
++42 (643) 245-738			+42 6
++169 (822) 542-726			+169 8
++176 (767) 782-369			+176 7
++47 (414) 369-343			+47 4
++138 (885) 618-512			+138 8
++104 (158) 671-355			+104 1
++188 (280) 087-526			+188 2
++50 (268) 571-336			+50 2
++183 (225) 960-024			+183 2
++58 (191) 982-491			+58 1
++9 (507) 092-535			+9 5
++64 (061) 601-398			+64 0
++189 (831) 591-877			+189 8
++129 (425) 765-844			+129 4
++94 (856) 734-046			+94 8
++35 (082) 845-261			+35 0
++185 (394) 622-272			+185 3
++163 (905) 707-740			+163 9
++23 (448) 213-807			+23 4
++42 (634) 077-089			+42 6
++18 (051) 287-382			+18 0
++29 (773) 545-520			+29 7
++43 (249) 097-743			+43 2
++158 (674) 736-891			+158 6
++45 (124) 771-454			+45 1
++180 (029) 457-654			+180 0
++75 (227) 250-652			+75 2
++5 (528) 317-854			+5 5
++81 (849) 629-290			+81 8
++46 (005) 119-176			+46 0
++108 (150) 380-705			+108 1
++40 (122) 224-247			+40 1
++68 (890) 680-027			+68 8
++169 (060) 204-504			+169 0
++95 (620) 820-945			+95 6
++43 (592) 938-846			+43 5
++7 (023) 296-647			+7 0
++20 (541) 401-396			+20 5
++64 (751) 365-934			+64 7
++163 (546) 119-476			+163 5
++198 (557) 666-779			+198 5
++14 (673) 759-017			+14 6
++161 (086) 020-168			+161 0
++65 (970) 575-488			+65 9
++2 (455) 126-377			+2 4
++196 (728) 585-376			+196 7
++33 (117) 430-125			+33 1
++195 (488) 831-768			+195 4
++86 (468) 718-108			+86 4
++194 (278) 716-950			+194 2
++43 (730) 685-847			+43 7
++140 (794) 289-551			+140 7
++21 (679) 740-834			+21 6
++98 (717) 997-323			+98 7
++47 (401) 100-231			+47 4
++143 (726) 462-368			+143 7
++147 (864) 005-968			+147 8
++130 (590) 757-665			+130 5
++197 (700) 858-976			+197 7
++158 (344) 541-946			+158 3
++56 (242) 901-234			+56 2
++132 (313) 075-754			+132 3
++130 (517) 953-149			+130 5
++158 (684) 878-743			+158 6
++52 (836) 582-035			+52 8
++138 (117) 484-671			+138 1
++50 (012) 148-873			+50 0
++105 (048) 919-483			+105 0
++18 (209) 851-997			+18 2
++176 (938) 056-084			+176 9
++141 (018) 132-973			+141 0
++199 (936) 162-415			+199 9
++33 (547) 051-264			+33 5
++161 (233) 981-513			+161 2
++115 (101) 728-328			+115 1
++45 (095) 746-635			+45 0
+
+Result: Failed
+
+
+
+
+[Task: 108]
+
+
+Program: (replace name (substr name 0 (indexof name "-" 0)) (concat (substr name 0 (+ (indexof name " " 0) 1)) "(" (substr name (+ (indexof name " " 0) 1) 3) ")"))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 109]
+
+
+Program: (replace (replace name " " " (") "-" ") ")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 110]
+
+
+Program: def extract_middle_part(name: str) -> str:
+    return name[4:7]
+
+Expected Output			GPT Output
+-----------------------------------------------------
+242			def
+242			def
+242			def
+916			def
+916			def
+916			def
+599			def
+599			def
+599			def
+424			def
+424			def
+424			def
+980			def
+980			def
+980			def
+655			def
+655			def
+655			def
+941			def
+941			def
+941			def
+186			def
+186			def
+186			def
+500			def
+500			def
+500			def
+860			def
+860			def
+860			def
+622			def
+622			def
+622			def
+722			def
+722			def
+722			def
+170			def
+170			def
+170			def
+610			def
+610			def
+610			def
+925			def
+925			def
+925			def
+899			def
+899			def
+899			def
+911			def
+911			def
+911			def
+950			def
+950			def
+950			def
+049			def
+049			def
+049			def
+503			def
+503			def
+503			def
+815			def
+815			def
+815			def
+808			def
+808			def
+808			def
+545			def
+545			def
+545			def
+281			def
+281			def
+281			def
+395			def
+395			def
+395			def
+903			def
+903			def
+903			def
+090			def
+090			def
+090			def
+611			def
+611			def
+611			def
+390			def
+390			def
+390			def
+430			def
+430			def
+430			def
+659			def
+659			def
+659			def
+505			def
+505			def
+505			def
+069			def
+069			def
+069			def
+102			def
+102			def
+102			def
+728			def
+728			def
+728			def
+726			def
+726			def
+726			def
+419			def
+419			def
+419			def
+741			def
+741			def
+741			def
+984			def
+984			def
+984			def
+919			def
+919			def
+919			def
+536			def
+536			def
+536			def
+835			def
+835			def
+835			def
+485			def
+485			def
+485			def
+776			def
+776			def
+776			def
+421			def
+421			def
+421			def
+713			def
+713			def
+713			def
+712			def
+712			def
+712			def
+994			def
+994			def
+994			def
+304			def
+304			def
+304			def
+153			def
+153			def
+153			def
+497			def
+497			def
+497			def
+726			def
+726			def
+726			def
+413			def
+413			def
+413			def
+386			def
+386			def
+386			def
+272			def
+272			def
+272			def
+629			def
+629			def
+629			def
+122			def
+122			def
+122			def
+759			def
+759			def
+759			def
+846			def
+846			def
+846			def
+037			def
+037			def
+037			def
+270			def
+270			def
+270			def
+877			def
+877			def
+877			def
+594			def
+594			def
+594			def
+253			def
+253			def
+253			def
+722			def
+722			def
+722			def
+145			def
+145			def
+145			def
+181			def
+181			def
+181			def
+140			def
+140			def
+140			def
+684			def
+684			def
+684			def
+296			def
+296			def
+296			def
+443			def
+443			def
+443			def
+334			def
+334			def
+334			def
+711			def
+711			def
+711			def
+636			def
+636			def
+636			def
+878			def
+878			def
+878			def
+545			def
+545			def
+545			def
+399			def
+399			def
+399			def
+608			def
+608			def
+608			def
+652			def
+652			def
+652			def
+805			def
+805			def
+805			def
+857			def
+857			def
+857			def
+827			def
+827			def
+827			def
+951			def
+951			def
+951			def
+178			def
+178			def
+178			def
+196			def
+196			def
+196			def
+875			def
+875			def
+875			def
+865			def
+865			def
+865			def
+686			def
+686			def
+686			def
+330			def
+330			def
+330			def
+065			def
+065			def
+065			def
+778			def
+778			def
+778			def
+029			def
+029			def
+029			def
+322			def
+322			def
+322			def
+587			def
+587			def
+587			def
+134			def
+134			def
+134			def
+300			def
+300			def
+300			def
+894			def
+894			def
+894			def
+454			def
+454			def
+454			def
+513			def
+513			def
+513			def
+086			def
+086			def
+086			def
+242			def
+916			def
+599			def
+424			def
+980			def
+655			def
+941			def
+186			def
+500			def
+860			def
+622			def
+722			def
+170			def
+610			def
+925			def
+899			def
+911			def
+950			def
+049			def
+503			def
+815			def
+808			def
+545			def
+281			def
+395			def
+903			def
+090			def
+611			def
+390			def
+430			def
+659			def
+505			def
+069			def
+102			def
+728			def
+726			def
+419			def
+741			def
+984			def
+919			def
+536			def
+835			def
+485			def
+776			def
+421			def
+713			def
+712			def
+994			def
+304			def
+153			def
+497			def
+726			def
+413			def
+386			def
+272			def
+629			def
+122			def
+759			def
+846			def
+037			def
+270			def
+877			def
+594			def
+253			def
+722			def
+145			def
+181			def
+140			def
+684			def
+296			def
+443			def
+334			def
+711			def
+636			def
+878			def
+545			def
+399			def
+608			def
+652			def
+805			def
+857			def
+827			def
+951			def
+178			def
+196			def
+875			def
+865			def
+686			def
+330			def
+065			def
+778			def
+029			def
+322			def
+587			def
+134			def
+300			def
+894			def
+454			def
+513			def
+086			def
+
+Result: Failed
+
+
+
+
+[Task: 111]
+
+
+[Task: 112]
+
+
+Program: (substr name 4 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+242			242
+916			916
+599			599
+424			424
+980			980
+655			655
+
+Result: Success
+
+
+
+
+[Task: 113]
+
+
+Program: (substr name (indexof name "-" 0) (+ 1 (indexof name "-" (+ 1 (indexof name "-" 0)))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 114]
+
+
+Program: (substr name 8 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+504			504
+504			504
+504			504
+545			545
+545			545
+545			545
+749			749
+749			749
+749			749
+843			843
+843			843
+843			843
+214			214
+214			214
+214			214
+094			094
+094			094
+094			094
+991			991
+991			991
+991			991
+562			562
+562			562
+562			562
+200			200
+200			200
+200			200
+034			034
+034			034
+034			034
+959			959
+959			959
+959			959
+311			311
+311			311
+311			311
+771			771
+771			771
+771			771
+118			118
+118			118
+118			118
+247			247
+247			247
+247			247
+439			439
+439			439
+439			439
+726			726
+726			726
+726			726
+358			358
+358			358
+358			358
+588			588
+588			588
+588			588
+234			234
+234			234
+234			234
+340			340
+340			340
+340			340
+434			434
+434			434
+434			434
+000			000
+000			000
+000			000
+597			597
+597			597
+597			597
+493			493
+493			493
+493			493
+028			028
+028			028
+028			028
+894			894
+894			894
+894			894
+100			100
+100			100
+100			100
+647			647
+647			647
+647			647
+596			596
+596			596
+596			596
+771			771
+771			771
+771			771
+007			007
+007			007
+007			007
+886			886
+886			886
+886			886
+117			117
+117			117
+117			117
+008			008
+008			008
+008			008
+198			198
+198			198
+198			198
+942			942
+942			942
+942			942
+346			346
+346			346
+346			346
+742			742
+742			742
+742			742
+361			361
+361			361
+361			361
+998			998
+998			998
+998			998
+065			065
+065			065
+065			065
+507			507
+507			507
+507			507
+949			949
+949			949
+949			949
+340			340
+340			340
+340			340
+099			099
+099			099
+099			099
+861			861
+861			861
+861			861
+906			906
+906			906
+906			906
+840			840
+840			840
+840			840
+598			598
+598			598
+598			598
+069			069
+069			069
+069			069
+583			583
+583			583
+583			583
+248			248
+248			248
+248			248
+462			462
+462			462
+462			462
+455			455
+455			455
+455			455
+927			927
+927			927
+927			927
+191			191
+191			191
+191			191
+670			670
+670			670
+670			670
+053			053
+053			053
+053			053
+297			297
+297			297
+297			297
+177			177
+177			177
+177			177
+878			878
+878			878
+878			878
+038			038
+038			038
+038			038
+254			254
+254			254
+254			254
+292			292
+292			292
+292			292
+742			742
+742			742
+742			742
+515			515
+515			515
+515			515
+756			756
+756			756
+756			756
+216			216
+216			216
+216			216
+621			621
+621			621
+621			621
+794			794
+794			794
+794			794
+692			692
+692			692
+692			692
+883			883
+883			883
+883			883
+358			358
+358			358
+358			358
+919			919
+919			919
+919			919
+701			701
+701			701
+701			701
+239			239
+239			239
+239			239
+757			757
+757			757
+757			757
+845			845
+845			845
+845			845
+793			793
+793			793
+793			793
+684			684
+684			684
+684			684
+430			430
+430			430
+430			430
+766			766
+766			766
+766			766
+290			290
+290			290
+290			290
+946			946
+946			946
+946			946
+745			745
+745			745
+745			745
+867			867
+867			867
+867			867
+715			715
+715			715
+715			715
+583			583
+583			583
+583			583
+126			126
+126			126
+126			126
+064			064
+064			064
+064			064
+036			036
+036			036
+036			036
+036			036
+036			036
+036			036
+473			473
+473			473
+473			473
+953			953
+953			953
+953			953
+876			876
+876			876
+876			876
+947			947
+947			947
+947			947
+374			374
+374			374
+374			374
+190			190
+190			190
+190			190
+726			726
+726			726
+726			726
+504			504
+545			545
+749			749
+843			843
+214			214
+094			094
+991			991
+562			562
+200			200
+034			034
+959			959
+311			311
+771			771
+118			118
+247			247
+439			439
+726			726
+358			358
+588			588
+234			234
+340			340
+434			434
+000			000
+597			597
+493			493
+028			028
+894			894
+100			100
+647			647
+596			596
+771			771
+007			007
+886			886
+117			117
+008			008
+198			198
+942			942
+346			346
+742			742
+361			361
+998			998
+065			065
+507			507
+949			949
+340			340
+099			099
+861			861
+906			906
+840			840
+598			598
+069			069
+583			583
+248			248
+462			462
+455			455
+927			927
+191			191
+670			670
+053			053
+297			297
+177			177
+878			878
+038			038
+254			254
+292			292
+742			742
+515			515
+756			756
+216			216
+621			621
+794			794
+692			692
+883			883
+358			358
+919			919
+701			701
+239			239
+757			757
+845			845
+793			793
+684			684
+430			430
+766			766
+290			290
+946			946
+745			745
+867			867
+715			715
+583			583
+126			126
+064			064
+036			036
+036			036
+473			473
+953			953
+876			876
+947			947
+374			374
+190			190
+726			726
+
+Result: Success
+
+
+
+
+[Task: 115]
+
+
+[Task: 116]
+
+
+Program: (substr name (- (length name) 3) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+504			504
+545			545
+749			749
+843			843
+214			214
+094			094
+
+Result: Success
+
+
+
+
+[Task: 117]
+
+
+Program: (substr name (- (length name) 3) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+504			504
+545			545
+749			749
+843			843
+214			214
+094			094
+
+Result: Success
+
+
+
+
+[Task: 118]
+
+
+error_code=context_length_exceeded error_message="This model's maximum context length is 8192 tokens. However, your messages resulted in 9948 tokens. Please reduce the length of the messages." error_param=messages error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+[Task: 119]
+
+
+Program: (concat 
+    (concat 
+        "(" 
+        (substr name 0 3)
+    ) 
+    (concat 
+        ")" 
+        (substr name 3 (- (length name) 3))
+    )
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 120]
+
+
+Program: (concat 
+    (concat 
+        (concat 
+            '(' 
+            (substr name 0 3)) 
+        ')') 
+    (substr name 3 (length name)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 121]
+
+
+Program: (concat 
+    (concat 
+        (concat 
+            '(' 
+            (substr name 0 3)) 
+        ')') 
+    (substr name 3 (length name)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 122]
+
+
+error_code=context_length_exceeded error_message="This model's maximum context length is 8192 tokens. However, your messages resulted in 9551 tokens. Please reduce the length of the messages." error_param=messages error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+[Task: 123]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 124]
+
+
+Program: (replace name "-" ".")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+938.242.504			938.242.504
+308.916.545			308.916.545
+623.599.749			623.599.749
+981.424.843			981.424.843
+118.980.214			118.980.214
+244.655.094			244.655.094
+
+Result: Success
+
+
+
+
+[Task: 125]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 126]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 127]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 128]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 129]
+
+
+Program: (substr name 1 (- (indexof name " " 0) 1))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+106			106
+83			83
+62			62
+172			172
+72			72
+95			95
+6			6
+
+Result: Success
+
+
+
+
+[Task: 130]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 131]
+
+
+Program: (substr name (+ (indexof name " " 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+769			769
+973			973
+647			647
+027			027
+001			001
+310			310
+775			775
+594			594
+927			927
+405			405
+538			538
+971			971
+258			258
+604			604
+998			998
+862			862
+165			165
+170			170
+462			462
+685			685
+675			675
+066			066
+039			039
+808			808
+643			643
+822			822
+767			767
+414			414
+885			885
+158			158
+280			280
+268			268
+225			225
+191			191
+507			507
+061			061
+831			831
+425			425
+856			856
+082			082
+394			394
+905			905
+448			448
+634			634
+051			051
+773			773
+249			249
+674			674
+124			124
+029			029
+227			227
+528			528
+849			849
+005			005
+150			150
+122			122
+890			890
+060			060
+620			620
+592			592
+023			023
+541			541
+751			751
+546			546
+557			557
+673			673
+086			086
+970			970
+455			455
+728			728
+117			117
+488			488
+468			468
+278			278
+730			730
+794			794
+679			679
+717			717
+401			401
+726			726
+864			864
+590			590
+700			700
+344			344
+242			242
+313			313
+517			517
+684			684
+836			836
+117			117
+012			012
+048			048
+209			209
+938			938
+018			018
+936			936
+547			547
+233			233
+101			101
+095			095
+
+Result: Success
+
+
+
+
+[Task: 132]
+
+
+Program: (substr name (+ (indexof name " " 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+769			769
+973			973
+647			647
+027			027
+001			001
+310			310
+775			775
+
+Result: Success
+
+
+
+
+[Task: 133]
+
+
+Program: (substr name (+ (indexof name " " 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+769			769
+973			973
+647			647
+027			027
+001			001
+310			310
+775			775
+
+Result: Success
+
+
+
+
+[Task: 134]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+
+
+
+
+[Task: 135]
+
+
+Program: (substr name (+ (indexof name "-" 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+858			858
+757			757
+787			787
+507			507
+050			050
+537			537
+969			969
+539			539
+275			275
+461			461
+347			347
+986			986
+276			276
+746			746
+898			898
+946			946
+041			041
+592			592
+008			008
+122			122
+366			366
+433			433
+436			436
+083			083
+245			245
+542			542
+782			782
+369			369
+618			618
+671			671
+087			087
+571			571
+960			960
+982			982
+092			092
+601			601
+591			591
+765			765
+734			734
+845			845
+622			622
+707			707
+213			213
+077			077
+287			287
+545			545
+097			097
+736			736
+771			771
+457			457
+250			250
+317			317
+629			629
+119			119
+380			380
+224			224
+680			680
+204			204
+820			820
+938			938
+296			296
+401			401
+365			365
+119			119
+666			666
+759			759
+020			020
+575			575
+126			126
+585			585
+430			430
+831			831
+718			718
+716			716
+685			685
+289			289
+740			740
+997			997
+100			100
+462			462
+005			005
+757			757
+858			858
+541			541
+901			901
+075			075
+953			953
+878			878
+582			582
+484			484
+148			148
+919			919
+851			851
+056			056
+132			132
+162			162
+051			051
+981			981
+728			728
+746			746
+
+Result: Success
+
+
+
+
+[Task: 136]
+
+
+Program: (substr name (+ (indexof name "-" 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+858			858
+757			757
+787			787
+507			507
+050			050
+537			537
+969			969
+
+Result: Success
+
+
+
+
+[Task: 137]
+
+
+Program: (substr name (+ (indexof name "-" 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+858			858
+757			757
+787			787
+507			507
+050			050
+537			537
+969			969
+
+Result: Success
+
+
+
+
+[Task: 138]
+
+
+error_code=context_length_exceeded error_message="This model's maximum context length is 8192 tokens. However, your messages resulted in 8747 tokens. Please reduce the length of the messages." error_param=messages error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+[Task: 139]
+
+
+Program: (substr name (+ (indexof name "-" 0) 1) 3)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+438			858
+831			757
+775			787
+632			507
+856			050
+401			537
+238			969
+946			539
+860			275
+331			461
+401			347
+103			986
+941			276
+137			746
+180			898
+541			946
+038			041
+272			592
+482			008
+086			122
+472			366
+096			433
+166			436
+074			083
+738			245
+726			542
+369			782
+343			369
+512			618
+355			671
+526			087
+336			571
+024			960
+491			982
+535			092
+398			601
+877			591
+844			765
+046			734
+261			845
+272			622
+740			707
+807			213
+089			077
+382			287
+520			545
+743			097
+891			736
+454			771
+654			457
+652			250
+854			317
+290			629
+176			119
+705			380
+247			224
+027			680
+504			204
+945			820
+846			938
+647			296
+396			401
+934			365
+476			119
+779			666
+017			759
+168			020
+488			575
+377			126
+376			585
+125			430
+768			831
+108			718
+950			716
+847			685
+551			289
+834			740
+323			997
+231			100
+368			462
+968			005
+665			757
+976			858
+946			541
+234			901
+754			075
+149			953
+743			878
+035			582
+671			484
+873			148
+483			919
+997			851
+084			056
+973			132
+415			162
+264			051
+513			981
+328			728
+635			746
+
+Result: Failed
+
+
+
+
+[Task: 140]
+
+
+[Task: 141]
+
+
+Program: (str.to.int (substr name (- (length name) 3) 3))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 142]
+
+
+error_code=context_length_exceeded error_message="This model's maximum context length is 8192 tokens. However, your messages resulted in 11147 tokens. Please reduce the length of the messages." error_param=messages error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+[Task: 143]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 144]
+
+
+Program: def string_manipulation(name):
+    return name.replace('+', '').replace(' ', '').replace('-', '.')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+106.769.858.438			def
+83.973.757.831			def
+62.647.787.775			def
+172.027.507.632			def
+72.001.050.856			def
+95.310.537.401			def
+6.775.969.238			def
+
+Result: Failed
+
+
+
+
+[Task: 145]
+
+
+Program: (replace (replace (replace name "+" "") " " "") "-" ".")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 146]
+
+
+error_code=rate_limit_exceeded error_message='Rate limit reached for gpt-4 in organization org-tQvXgazzYUUJIszNfWRJEIUt on tokens per min. Limit: 10000 / min. Please try again in 6ms. Contact us through our help center at help.openai.com if you continue to have issues.' error_param=None error_type=tokens message='OpenAI API error received' stream_error=False
+[Task: 147]
+
+
+Program: (substr name 0 (indexof name "-" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+938			938
+308			308
+623			623
+981			981
+118			118
+244			244
+830			830
+911			911
+002			002
+113			113
+457			457
+986			986
+110			110
+469			469
+817			817
+256			256
+886			886
+562			562
+693			693
+840			840
+698			698
+498			498
+329			329
+380			380
+332			332
+251			251
+176			176
+336			336
+416			416
+019			019
+960			960
+475			475
+424			424
+941			941
+331			331
+487			487
+612			612
+594			594
+320			320
+060			060
+275			275
+548			548
+197			197
+455			455
+085			085
+785			785
+426			426
+386			386
+918			918
+247			247
+075			075
+140			140
+049			049
+977			977
+058			058
+428			428
+449			449
+568			568
+312			312
+943			943
+014			014
+658			658
+888			888
+232			232
+308			308
+342			342
+568			568
+300			300
+099			099
+575			575
+994			994
+400			400
+684			684
+539			539
+009			009
+919			919
+546			546
+993			993
+107			107
+206			206
+198			198
+912			912
+560			560
+142			142
+732			732
+963			963
+881			881
+234			234
+720			720
+593			593
+671			671
+252			252
+700			700
+882			882
+964			964
+038			038
+158			158
+757			757
+872			872
+566			566
+
+Result: Success
+
+
+
+
+[Task: 148]
+
+
+Program: (substr name 0 (indexof name "-" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+938			938
+308			308
+623			623
+981			981
+118			118
+244			244
+
+Result: Success
+
+
+
+
+[Task: 149]
+
+
+Program: (substr name 0 (indexof name "-" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+938			938
+308			308
+623			623
+981			981
+118			118
+244			244
+
+Result: Success
+
+
+
+
+[Task: 150]
+
+
+Program: (indexof _arg_0 _arg_1 _arg_2)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 151]
+
+
+Program: (substr _arg_0 _arg_1 (- (length _arg_0) _arg_1))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 152]
+
+
+[Task: 153]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 "." (length _arg_0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+happy			happy.jp
+pivot table			pivot table.xl
+sales data			sales data.cs
+invoice3001			invoice3001.xls.pd
+
+Result: Failed
+
+
+
+
+[Task: 154]
+
+
+Program: (replace _arg_0 "    " " ")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+The shawshank			The shawshank
+The godfather			The godfather
+pulp fiction			pulp   fiction
+
+Result: Failed
+
+
+
+
+[Task: 155]
+
+
+Program: (replace _arg_0 "-" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+8013451987			8013451987
+6125542000			6125542000
+
+Result: Success
+
+
+
+
+[Task: 156]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 "/" 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "/" 0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+shotcut.xls			users/dave/shotcut.xls
+formulas.xls			users/dave/formulas.xls
+pivot table.xls			users/dave/pivot table.xls
+
+Result: Failed
+
+
+
+
+[Task: 157]
+
+
+Program: (replace 
+    (replace 
+        (replace _arg_0 _arg_1 '') 
+        (concat 
+            (substr _arg_1 0 1) 
+            (substr _arg_1 0 1)) 
+        _arg_1) 
+    (concat 
+        (substr _arg_1 0 1) 
+        (substr _arg_1 0 1)) 
+    _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 158]
+
+
+Program: (replace _arg_0 " " "-")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+801-456-8756			801-456-8756
+978-456-8756			978-456-8756
+
+Result: Success
+
+
+
+
+[Task: 159]
+
+
+Program: (concat lastname (concat ' ' firstname))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers Launa			Withers Launa
+Withers Launa			Withers Launa
+Withers Launa			Withers Launa
+Edison Lakenya			Edison Lakenya
+Edison Lakenya			Edison Lakenya
+Edison Lakenya			Edison Lakenya
+Hage Brendan			Hage Brendan
+Hage Brendan			Hage Brendan
+Hage Brendan			Hage Brendan
+Lango Bradford			Lango Bradford
+Lango Bradford			Lango Bradford
+Lango Bradford			Lango Bradford
+Akiyama Rudolf			Akiyama Rudolf
+Akiyama Rudolf			Akiyama Rudolf
+Akiyama Rudolf			Akiyama Rudolf
+Constable Lara			Constable Lara
+Constable Lara			Constable Lara
+Constable Lara			Constable Lara
+Ghoston Madelaine			Ghoston Madelaine
+Ghoston Madelaine			Ghoston Madelaine
+Ghoston Madelaine			Ghoston Madelaine
+Hornak Salley			Hornak Salley
+Hornak Salley			Hornak Salley
+Hornak Salley			Hornak Salley
+Junkin Micha			Junkin Micha
+Junkin Micha			Junkin Micha
+Junkin Micha			Junkin Micha
+Bobo Teddy			Bobo Teddy
+Bobo Teddy			Bobo Teddy
+Bobo Teddy			Bobo Teddy
+Scalia Coralee			Scalia Coralee
+Scalia Coralee			Scalia Coralee
+Scalia Coralee			Scalia Coralee
+Quashie Jeff			Quashie Jeff
+Quashie Jeff			Quashie Jeff
+Quashie Jeff			Quashie Jeff
+Babiarz Vena			Babiarz Vena
+Babiarz Vena			Babiarz Vena
+Babiarz Vena			Babiarz Vena
+Lain Karrie			Lain Karrie
+Lain Karrie			Lain Karrie
+Lain Karrie			Lain Karrie
+Dermody Tobias			Dermody Tobias
+Dermody Tobias			Dermody Tobias
+Dermody Tobias			Dermody Tobias
+Hopkins Celsa			Hopkins Celsa
+Hopkins Celsa			Hopkins Celsa
+Hopkins Celsa			Hopkins Celsa
+Halpern Kimberley			Halpern Kimberley
+Halpern Kimberley			Halpern Kimberley
+Halpern Kimberley			Halpern Kimberley
+Rowden Phillip			Rowden Phillip
+Rowden Phillip			Rowden Phillip
+Rowden Phillip			Rowden Phillip
+Neil Elias			Neil Elias
+Neil Elias			Neil Elias
+Neil Elias			Neil Elias
+Cortes Lashanda			Cortes Lashanda
+Cortes Lashanda			Cortes Lashanda
+Cortes Lashanda			Cortes Lashanda
+Spell Mackenzie			Spell Mackenzie
+Spell Mackenzie			Spell Mackenzie
+Spell Mackenzie			Spell Mackenzie
+Eccleston Kathlyn			Eccleston Kathlyn
+Eccleston Kathlyn			Eccleston Kathlyn
+Eccleston Kathlyn			Eccleston Kathlyn
+Brescia Georgina			Brescia Georgina
+Brescia Georgina			Brescia Georgina
+Brescia Georgina			Brescia Georgina
+Miah Beata			Miah Beata
+Miah Beata			Miah Beata
+Miah Beata			Miah Beata
+Seamons Desiree			Seamons Desiree
+Seamons Desiree			Seamons Desiree
+Seamons Desiree			Seamons Desiree
+Soderstrom Jeanice			Soderstrom Jeanice
+Soderstrom Jeanice			Soderstrom Jeanice
+Soderstrom Jeanice			Soderstrom Jeanice
+Jurgens Mariel			Jurgens Mariel
+Jurgens Mariel			Jurgens Mariel
+Jurgens Mariel			Jurgens Mariel
+Bogle Alida			Bogle Alida
+Bogle Alida			Bogle Alida
+Bogle Alida			Bogle Alida
+Olague Jacqualine			Olague Jacqualine
+Olague Jacqualine			Olague Jacqualine
+Olague Jacqualine			Olague Jacqualine
+Clasen Joaquin			Clasen Joaquin
+Clasen Joaquin			Clasen Joaquin
+Clasen Joaquin			Clasen Joaquin
+Richert Samuel			Richert Samuel
+Richert Samuel			Richert Samuel
+Richert Samuel			Richert Samuel
+Marcus Malissa			Marcus Malissa
+Marcus Malissa			Marcus Malissa
+Marcus Malissa			Marcus Malissa
+Partida Alaina			Partida Alaina
+Partida Alaina			Partida Alaina
+Partida Alaina			Partida Alaina
+Mulloy Trinidad			Mulloy Trinidad
+Mulloy Trinidad			Mulloy Trinidad
+Mulloy Trinidad			Mulloy Trinidad
+Garrard Carlene			Garrard Carlene
+Garrard Carlene			Garrard Carlene
+Garrard Carlene			Garrard Carlene
+Chism Melodi			Chism Melodi
+Chism Melodi			Chism Melodi
+Chism Melodi			Chism Melodi
+Chilcott Bess			Chilcott Bess
+Chilcott Bess			Chilcott Bess
+Chilcott Bess			Chilcott Bess
+Aylward Chong			Aylward Chong
+Aylward Chong			Aylward Chong
+Aylward Chong			Aylward Chong
+Ramthun Jani			Ramthun Jani
+Ramthun Jani			Ramthun Jani
+Ramthun Jani			Ramthun Jani
+Heintz Jacquiline			Heintz Jacquiline
+Heintz Jacquiline			Heintz Jacquiline
+Heintz Jacquiline			Heintz Jacquiline
+Marquess Hayley			Marquess Hayley
+Marquess Hayley			Marquess Hayley
+Marquess Hayley			Marquess Hayley
+Spagnoli Andria			Spagnoli Andria
+Spagnoli Andria			Spagnoli Andria
+Spagnoli Andria			Spagnoli Andria
+Covelli Irwin			Covelli Irwin
+Covelli Irwin			Covelli Irwin
+Covelli Irwin			Covelli Irwin
+Montiel Gertude			Montiel Gertude
+Montiel Gertude			Montiel Gertude
+Montiel Gertude			Montiel Gertude
+Reily Stefany			Reily Stefany
+Reily Stefany			Reily Stefany
+Reily Stefany			Reily Stefany
+Mcgaughey Rae			Mcgaughey Rae
+Mcgaughey Rae			Mcgaughey Rae
+Mcgaughey Rae			Mcgaughey Rae
+Latimore Cruz			Latimore Cruz
+Latimore Cruz			Latimore Cruz
+Latimore Cruz			Latimore Cruz
+Casler Maryann			Casler Maryann
+Casler Maryann			Casler Maryann
+Casler Maryann			Casler Maryann
+Gregori Annalisa			Gregori Annalisa
+Gregori Annalisa			Gregori Annalisa
+Gregori Annalisa			Gregori Annalisa
+Pannell Jenee			Pannell Jenee
+Pannell Jenee			Pannell Jenee
+Pannell Jenee			Pannell Jenee
+Withers Launa			Withers Launa
+Edison Lakenya			Edison Lakenya
+Hage Brendan			Hage Brendan
+Lango Bradford			Lango Bradford
+Akiyama Rudolf			Akiyama Rudolf
+Constable Lara			Constable Lara
+Ghoston Madelaine			Ghoston Madelaine
+Hornak Salley			Hornak Salley
+Junkin Micha			Junkin Micha
+Bobo Teddy			Bobo Teddy
+Scalia Coralee			Scalia Coralee
+Quashie Jeff			Quashie Jeff
+Babiarz Vena			Babiarz Vena
+Lain Karrie			Lain Karrie
+Dermody Tobias			Dermody Tobias
+Hopkins Celsa			Hopkins Celsa
+Halpern Kimberley			Halpern Kimberley
+Rowden Phillip			Rowden Phillip
+Neil Elias			Neil Elias
+Cortes Lashanda			Cortes Lashanda
+Spell Mackenzie			Spell Mackenzie
+Eccleston Kathlyn			Eccleston Kathlyn
+Brescia Georgina			Brescia Georgina
+Miah Beata			Miah Beata
+Seamons Desiree			Seamons Desiree
+Soderstrom Jeanice			Soderstrom Jeanice
+Jurgens Mariel			Jurgens Mariel
+Bogle Alida			Bogle Alida
+Olague Jacqualine			Olague Jacqualine
+Clasen Joaquin			Clasen Joaquin
+Richert Samuel			Richert Samuel
+Marcus Malissa			Marcus Malissa
+Partida Alaina			Partida Alaina
+Mulloy Trinidad			Mulloy Trinidad
+Garrard Carlene			Garrard Carlene
+Chism Melodi			Chism Melodi
+Chilcott Bess			Chilcott Bess
+Aylward Chong			Aylward Chong
+Ramthun Jani			Ramthun Jani
+Heintz Jacquiline			Heintz Jacquiline
+Marquess Hayley			Marquess Hayley
+Spagnoli Andria			Spagnoli Andria
+Covelli Irwin			Covelli Irwin
+Montiel Gertude			Montiel Gertude
+Reily Stefany			Reily Stefany
+Mcgaughey Rae			Mcgaughey Rae
+Latimore Cruz			Latimore Cruz
+Casler Maryann			Casler Maryann
+Gregori Annalisa			Gregori Annalisa
+Pannell Jenee			Pannell Jenee
+
+Result: Success
+
+
+
+
+[Task: 160]
+
+
+Program: (concat lastname ' ' firstname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers Launa			Withers 
+Edison Lakenya			Edison 
+Hage Brendan			Hage 
+Lango Bradford			Lango 
+Akiyama Rudolf			Akiyama 
+Constable Lara			Constable 
+Ghoston Madelaine			Ghoston 
+Hornak Salley			Hornak 
+Junkin Micha			Junkin 
+Bobo Teddy			Bobo 
+Scalia Coralee			Scalia 
+Quashie Jeff			Quashie 
+Babiarz Vena			Babiarz 
+Lain Karrie			Lain 
+Dermody Tobias			Dermody 
+Hopkins Celsa			Hopkins 
+Halpern Kimberley			Halpern 
+Rowden Phillip			Rowden 
+Neil Elias			Neil 
+Cortes Lashanda			Cortes 
+Spell Mackenzie			Spell 
+Eccleston Kathlyn			Eccleston 
+Brescia Georgina			Brescia 
+Miah Beata			Miah 
+Seamons Desiree			Seamons 
+Soderstrom Jeanice			Soderstrom 
+Jurgens Mariel			Jurgens 
+Bogle Alida			Bogle 
+Olague Jacqualine			Olague 
+Clasen Joaquin			Clasen 
+Richert Samuel			Richert 
+Marcus Malissa			Marcus 
+Partida Alaina			Partida 
+Mulloy Trinidad			Mulloy 
+Garrard Carlene			Garrard 
+Chism Melodi			Chism 
+Chilcott Bess			Chilcott 
+Aylward Chong			Aylward 
+Ramthun Jani			Ramthun 
+Heintz Jacquiline			Heintz 
+Marquess Hayley			Marquess 
+Spagnoli Andria			Spagnoli 
+Covelli Irwin			Covelli 
+Montiel Gertude			Montiel 
+Reily Stefany			Reily 
+Mcgaughey Rae			Mcgaughey 
+Latimore Cruz			Latimore 
+Casler Maryann			Casler 
+Gregori Annalisa			Gregori 
+Pannell Jenee			Pannell 
+
+Result: Failed
+
+
+
+
+[Task: 161]
+
+
+Program: (concat (concat lastname ' ') firstname)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers Launa			Withers Launa
+Edison Lakenya			Edison Lakenya
+Hage Brendan			Hage Brendan
+Lango Bradford			Lango Bradford
+Akiyama Rudolf			Akiyama Rudolf
+Constable Lara			Constable Lara
+
+Result: Success
+
+
+
+
+[Task: 162]
+
+
+Program: (concat lastname (concat ' ' firstname))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Withers Launa			Withers Launa
+Edison Lakenya			Edison Lakenya
+Hage Brendan			Hage Brendan
+Lango Bradford			Lango Bradford
+Akiyama Rudolf			Akiyama Rudolf
+Constable Lara			Constable Lara
+
+Result: Success
+
+
+
+
+[Task: 163]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 "v" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 164]
+
+
+Program: (at _arg_0 (- (length _arg_0) 1))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 165]
+
+
+Program: (substr _arg_0 0 _arg_1)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 166]
+
+
+Program: (ite (= _arg_1 1) 
+        (substr _arg_0 0 (indexof _arg_0 "_" 0)) 
+        (substr _arg_0 (+ (indexof _arg_0 "_" 0) 1) (- (length _arg_0) (+ (indexof _arg_0 "_" 0) 1))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 167]
+
+
+[Task: 168]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "PAX" 0) (- (length _arg_0) (indexof _arg_0 "PAX" 0)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+HEEN PAX 77820			PAX 77820
+PAX			PAX
+BOX 4403 PAX SSKA			PAX SSKA
+
+Result: Failed
+
+
+
+
+[Task: 169]
+
+
+Program: (replace _arg_0 ' Inc' '')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Trucking			Trucking.
+New Truck			New Truck
+ABV Trucking			ABV Trucking, LLC
+
+Result: Failed
+
+
+
+
+[Task: 170]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 " " (- (length _arg_0) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+india china			india china japa
+indonesia			indonesia kore
+
+Result: Failed
+
+
+
+
+[Task: 171]
+
+
+Program: (ite (contains _arg_0 " ")
+     (substr _arg_0 (+ (indexof _arg_0 " " 0) 1) (- (length _arg_0) (+ (indexof _arg_0 " " 0) 1)))
+     "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Westerkerk HRL			14 oct 1956 Westerkerk HRL
+			14 oct 1956
+Westerkerk HRL			15 feb 1987 Westerkerk HRL
+
+Result: Failed
+
+
+
+
+[Task: 172]
+
+
+Program: (replace (replace (replace _arg_0 "<" " ") ">" " ") "," " ")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+R/V 208 0 32			R/V 208 0 32 
+R/S 184 28 16			R/S 184 28 16 
+R/B 255 88 80			R/B 255 88 80 
+
+Result: Failed
+
+
+
+
+[Task: 173]
+
+
+Program: (substr _arg_0 0 (indexof _arg_0 "=" 0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+valentine day			valentine day
+movie blah=2blahblah, The			movie blah
+
+Result: Failed
+
+
+
+
+[Task: 174]
+
+
+Program: (replace (substr _arg_0 (indexof _arg_0 "=" 0) (length _arg_0)) "=" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 175]
+
+
+Program: (replace _arg_0 _arg_1 '')
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Item 1			Item 1 
+Item 2 -1DUQ			Item 2 -1DUQ
+
+Result: Failed
+
+
+
+
+[Task: 176]
+
+
+Program: (substr _arg_0 (indexof _arg_0 "/" -1) (length _arg_0))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 177]
+
+
+Program: (substr _arg_0 (+ (indexof _arg_0 " " (length _arg_0)) 1) (- (length _arg_0) (+ (indexof _arg_0 " " (length _arg_0)) 1)))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Jones			Sarah Jane Jones
+Smithfield			Bob Jane Smithfield
+
+Result: Failed
+
+
+
+
+[Task: 178]
+
+
+Program: (replace (replace _arg_0 "<b>" "") "<b>" "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+0.66			0.66
+0.409			0.409
+0.7268			0.7268
+
+Result: Success
+
+
+
+
+[Task: 179]
+
+
+Program: (str.to.int (substr _arg_0 (indexof _arg_0 "%" 0) (+ 1 (length "%"))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 180]
+
+
+Program: (replace _arg_0 (int.to.str (str.to.int (substr _arg_0 0 (indexof _arg_0 " " 0)))) "")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+[Task: 181]
+
+
+[Task: 182]
+
+
+[Task: 183]
+
+
+Program: (concat (concat col1 ',') (concat ' ' col2))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania, Phialdelphia, PA, USA
+Cornell University, Ithaca, New York, USA			Cornell University, Ithaca, New York, USA
+University of Maryland College Park, College Park, MD			University of Maryland College Park, College Park, MD
+University of Michigan, Ann Arbor, MI, USA			University of Michigan, Ann Arbor, MI, USA
+Yale University, New Haven, CT, USA			Yale University, New Haven, CT, USA
+Columbia University, New York, NY, USA			Columbia University, New York, NY, USA
+
+Result: Success
+
+
+
+
+[Task: 184]
+
+
+Program: (concat (concat col1 ',') (concat ' ' col2))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania, Phialdelphia, PA, USA
+Cornell University, Ithaca, New York, USA			Cornell University, Ithaca, New York, USA
+University of Maryland College Park, College Park, MD			University of Maryland College Park, College Park, MD
+University of Michigan, Ann Arbor, MI, USA			University of Michigan, Ann Arbor, MI, USA
+Yale University, New Haven, CT, USA			Yale University, New Haven, CT, USA
+Columbia University, New York, NY, USA			Columbia University, New York, NY, USA
+
+Result: Success
+
+
+
+
+[Task: 185]
+
+
+Program: (ite (suffixof 'USA' col2) (concat (concat col1 ', ') col2) (concat (concat (concat col1 ', ') col2) ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+UC Berkeley, Berkeley, CA, USA			UC Berkeley, Berkeley, CA, USA
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania, Phialdelphia, PA, USA
+UCLA, Los Angeles, CA, USA			UCLA, Los Angeles, CA, USA
+Cornell University, Ithaca, New York, USA			Cornell University, Ithaca, New York, USA
+Penn, Philadelphia, PA, USA			Penn, Philadelphia, PA, USA
+University of Michigan, Ann Arbor, MI, USA			University of Michigan, Ann Arbor, MI, USA
+UC Berkeley, Berkeley, CA, USA			UC Berkeley, Berkeley, CA, USA
+MIT, Cambridge, MA, USA			MIT, Cambridge, MA, USA
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania, Phialdelphia, PA, USA
+UCLA, Los Angeles, CA, USA			UCLA, Los Angeles, CA, USA
+University of Maryland College Park, College Park, MD, USA			University of Maryland College Park, College Park, MD, USA
+University of Michigan, Ann Arbor, MI, USA			University of Michigan, Ann Arbor, MI, USA
+UC Berkeley, Berkeley, CA, USA			UC Berkeley, Berkeley, CA, USA
+MIT, Cambridge, MA, USA			MIT, Cambridge, MA, USA
+Rice University, Houston, TX, USA			Rice University, Houston, TX, USA
+Yale University, New Haven, CT, USA			Yale University, New Haven, CT, USA
+Columbia University, New York, NY, USA			Columbia University, New York, NY, USA
+NYU, New York, New York, USA			NYU, New York, New York, USA
+Drexel University, Philadelphia, PA, USA			Drexel University, Philadelphia, PA, USA
+UC Berkeley, Berkeley, CA, USA			UC Berkeley, Berkeley, CA, USA
+UIUC, Urbana, IL, USA			UIUC, Urbana, IL, USA
+Temple University, Philadelphia, PA, USA			Temple University, Philadelphia, PA, USA
+Harvard University, Cambridge, MA, USA			Harvard University, Cambridge, MA, USA
+University of Connecticut, Storrs, CT, USA			University of Connecticut, Storrs, CT, USA
+Drexel University, Philadelphia, PA, USA			Drexel University, Philadelphia, PA, USA
+NYU, New York, New York, USA			NYU, New York, New York, USA
+UIUC, Urbana, IL, USA			UIUC, Urbana, IL, USA
+New Haven University, New Haven, CT, USA			New Haven University, New Haven, CT, USA
+University of California, Santa Barbara, Santa Barbara, CA, USA			University of California, Santa Barbara, Santa Barbara, CA, USA
+University of Connecticut, Storrs, CT, USA			University of Connecticut, Storrs, CT, USA
+
+Result: Success
+
+
+
+
+[Task: 186]
+
+
+Program: (concat (concat col1 ',') (ite (contains col2 'USA') col2 (concat col2 ', USA')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania,Phialdelphia, PA, USA
+UCLA, Los Angeles, CA, USA			UCLA,Los Angeles, CA, USA
+Cornell University, Ithaca, New York, USA			Cornell University,Ithaca, New York, USA
+Penn, Philadelphia, PA, USA			Penn,Philadelphia, PA, USA
+University of Maryland College Park, College Park, MD, USA			University of Maryland College Park,College Park, MD, USA
+University of Michigan, Ann Arbor, MI, USA			University of Michigan,Ann Arbor, MI, USA
+UC Berkeley, Berkeley, CA, USA			UC Berkeley,Berkeley, CA, USA
+MIT, Cambridge, MA, USA			MIT,Cambridge, MA, USA
+Rice University, Houston, TX, USA			Rice University,Houston, TX, USA
+Yale University, New Haven, CT, USA			Yale University,New Haven, CT, USA
+Columbia University, New York, NY, USA			Columbia University,New York, NY, USA
+NYU, New York, New York, USA			NYU,New York, New York, USA
+UC Berkeley, Berkeley, CA, USA			UC Berkeley,Berkeley, CA, USA
+UIUC, Urbana, IL, USA			UIUC,Urbana, IL, USA
+Temple University, Philadelphia, PA, USA			Temple University,Philadelphia, PA, USA
+Harvard University, Cambridge, MA, USA			Harvard University,Cambridge, MA, USA
+University of Connecticut, Storrs, CT, USA			University of Connecticut,Storrs, CT, USA
+Drexel University, Philadelphia, PA, USA			Drexel University,Philadelphia, PA, USA
+New Haven University, New Haven, CT, USA			New Haven University,New Haven, CT, USA
+University of California, Santa Barbara, Santa Barbara, CA, USA			University of California, Santa Barbara,Santa Barbara, CA, USA
+
+Result: Failed
+
+
+
+
+[Task: 187]
+
+
+Program: (concat (concat col1 ',') (ite (contains col2 'USA') col2 (concat col2 ', USA')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania,Phialdelphia, PA, USA
+UCLA, Los Angeles, CA, USA			UCLA,Los Angeles, CA, USA
+Cornell University, Ithaca, New York, USA			Cornell University,Ithaca, New York, USA
+Penn, Philadelphia, PA, USA			Penn,Philadelphia, PA, USA
+University of Maryland College Park, College Park, MD, USA			University of Maryland College Park,College Park, MD, USA
+University of Michigan, Ann Arbor, MI, USA			University of Michigan,Ann Arbor, MI, USA
+
+Result: Failed
+
+
+
+
+[Task: 188]
+
+
+Program: (concat (concat col1 ',') (concat ' ' (concat col2 (ite (contains col2 'USA') '' ', USA'))))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+University of Pennsylvania, Phialdelphia, PA, USA			University of Pennsylvania, Phialdelphia, PA, USA
+UCLA, Los Angeles, CA, USA			UCLA, Los Angeles, CA, USA
+Cornell University, Ithaca, New York, USA			Cornell University, Ithaca, New York, USA
+Penn, Philadelphia, PA, USA			Penn, Philadelphia, PA, USA
+University of Maryland College Park, College Park, MD, USA			University of Maryland College Park, College Park, MD, USA
+University of Michigan, Ann Arbor, MI, USA			University of Michigan, Ann Arbor, MI, USA
+
+Result: Success
+
+
+
+
+[Task: 189]
+
+
+Program: (ite (contains col2 'USA') col2 (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Berkeley, CA, USA			Berkeley, CA, USA
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Ithaca, New York, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Houston, TX, USA			Houston, TX, USA
+New Haven, CT, USA			New Haven, CT, USA
+New York, NY, USA			New York, NY, USA
+New York, New York, USA			New York, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Urbana, IL, USA			Urbana, IL, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Storrs, CT, USA			Storrs, CT, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+New York, New York, USA			New York, New York, USA
+Urbana, IL, USA			Urbana, IL, USA
+New Haven, CT, USA			New Haven, CT, USA
+Santa Barbara, CA, USA			Santa Barbara, CA, USA
+Storrs, CT, USA			Storrs, CT, USA
+
+Result: Success
+
+
+
+
+[Task: 190]
+
+
+Program: (ite (suffixof ', USA' col2) col2 (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, New York, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Houston, TX, USA			Houston, TX, USA
+New Haven, CT, USA			New Haven, CT, USA
+New York, NY, USA			New York, NY, USA
+New York, New York, USA			New York, New York, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Urbana, IL, USA			Urbana, IL, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Storrs, CT, USA			Storrs, CT, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+New Haven, CT, USA			New Haven, CT, USA
+Santa Barbara, CA, USA			Santa Barbara, CA, USA
+
+Result: Success
+
+
+
+
+[Task: 191]
+
+
+Program: (ite (suffixof 'USA' col2) col2 (concat col2 'USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CAUSA
+Ithaca, New York, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+College Park, MD, USA			College Park, MDUSA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+
+Result: Failed
+
+
+
+
+[Task: 192]
+
+
+Program: (ite (contains col2 'USA') col2 (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, New York, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+
+Result: Success
+
+
+
+
+[Task: 193]
+
+
+Program: (ite (contains col2 'USA') col2 (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Berkeley, CA, USA			Berkeley, CA, USA
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Ithaca, NY, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Houston, TX, USA			Houston, TX, USA
+New Haven, CT, USA			New Haven, CT, USA
+New York, NY, USA			New York, NY, USA
+New York, NY, USA			New York, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Urbana, IL, USA			Urbana, IL, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Storrs, CT, USA			Storrs, CT, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+New York, NY, USA			New York, New York, USA
+Urbana, IL, USA			Urbana, IL, USA
+New Haven, CT, USA			New Haven, CT, USA
+Santa Barbara, CA, USA			Santa Barbara, CA, USA
+Storrs, CT, USA			Storrs, CT, USA
+
+Result: Failed
+
+
+
+
+[Task: 194]
+
+
+Program: (ite (contains col2 'New York') 
+     (replace col2 'New York' 'NY') 
+     (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, NY, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Cambridge, MA, USA			Cambridge, MA, USA
+Houston, TX, USA			Houston, TX, USA
+New Haven, CT, USA			New Haven, CT, USA, USA
+New York, NY, USA			NY, NY, USA
+New York, NY, USA			NY, NY, USA
+Berkeley, CA, USA			Berkeley, CA, USA
+Urbana, IL, USA			Urbana, IL, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+Cambridge, MA, USA			Cambridge, MA, USA, USA
+Storrs, CT, USA			Storrs, CT, USA, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+New Haven, CT, USA			New Haven, CT, USA, USA
+Santa Barbara, CA, USA			Santa Barbara, CA, USA, USA
+
+Result: Failed
+
+
+
+
+[Task: 195]
+
+
+Program: (ite 
+    (contains col2 'New York') 
+    (concat 
+        (replace col2 'New York' 'NY') 
+        ', USA'
+    ) 
+    (concat col2 ', USA')
+)
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, NY, USA, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA, USA
+New York, NY, USA			NY, NY, USA, USA
+New York, NY, USA			NY, NY, USA, USA
+
+Result: Failed
+
+
+
+
+[Task: 196]
+
+
+Program: (ite (contains col2 'New York') 
+     (replace col2 'New York' 'NY') 
+     (ite (contains col2 'USA') 
+          col2 
+          (concat col2 ', USA')))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, NY, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+New York, NY, USA			NY, NY, USA
+New York, NY, USA			NY, NY, USA
+
+Result: Failed
+
+
+
+
+[Task: 197]
+
+
+[Task: 198]
+
+
+[Task: 199]
+
+
+Program: (concat col2 ", USA")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, New York, USA, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA, USA
+New York, NY, USA			New York, NY, USA, USA
+New York, NY, USA			New York, New York, USA, USA
+
+Result: Failed
+
+
+
+
+[Task: 200]
+
+
+Program: (concat col2 ", USA")
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, New York, USA, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA, USA
+New York, NY, USA			New York, NY, USA, USA
+New York, NY, USA			New York, New York, USA, USA
+
+Result: Failed
+
+
+
+
+[Task: 201]
+
+
+[Task: 202]
+
+
+[Task: 203]
+
+
+Program: (ite (contains col2 'USA')
+     col2
+     (concat col2 ', USA'))
+
+Expected Output			GPT Output
+-----------------------------------------------------
+Phialdelphia, PA, USA			Phialdelphia, PA, USA
+Los Angeles, CA, USA			Los Angeles, CA, USA
+Ithaca, NY, USA			Ithaca, New York, USA
+Philadelphia, PA, USA			Philadelphia, PA, USA
+College Park, MD, USA			College Park, MD, USA
+Ann Arbor, MI, USA			Ann Arbor, MI, USA
+New York, NY, USA			New York, NY, USA
+New York, NY, USA			New York, New York, USA
+
+Result: Failed
+
+
+
+
+[Task: 204]
+
+
+Program: (ite (contains col2 'New York') 
+        (replace col2 'New York' 'NY') 
+        (ite (contains col2 'California') 
+            (replace col2 'California' 'CA') 
+            (ite (contains col2 'Pennsylvania') 
+                (replace col2 'Pennsylvania' 'PA') 
+                (ite (contains col2 'Maryland') 
+                    (replace col2 'Maryland' 'MD') 
+                    (ite (contains col2 'Michigan') 
+                        (replace col2 'Michigan' 'MI') 
+                        col2
+                    )
+                )
+            )
+        )
+    )
+    (ite (suffixof 'USA' col2) 
+        col2 
+        (concat col2 ', USA')
+    )
+
+Expected Output			GPT Output
+-----------------------------------------------------
