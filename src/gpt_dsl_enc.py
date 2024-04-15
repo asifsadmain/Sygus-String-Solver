@@ -11,7 +11,7 @@ import re
 from sygus_string_dsl import *
 from gpt_parser import parse_string, flatten_list, iterate_lists
 from feedback import get_dsl_match_not_found
-from iterate import *
+from iterate_enc import *
 
 
 PATH_TO_STR_BENCHMARKS = "../sygus_string_tasks/"
@@ -34,8 +34,8 @@ def get_response_from_api(user_message):
             {"role": "system", "content": system_message},
             {"role": "user", "content": user_message}
         ],
-    temperature=0,
-    max_tokens=256
+    temperature=0.5,
+    # max_tokens=256
     )
 
     return response['choices'][0]['message']['content']
@@ -63,7 +63,7 @@ def construct_user_message(string_variables, string_literals, integer_variables,
         int_lit = ' | '.join(map(repr, integer_literals)) + ' | '
 
     for i in range(len(input_output_examples)):
-        formatted_pairs = [f'{key}: {value}' for key, value in input_output_examples[i].items()]
+        formatted_pairs = [f'{key}: "{value}"' for key, value in input_output_examples[i].items()]
         io_examples += str((i+1)) + ". " + ', '.join(formatted_pairs) + "\n    "
 
     DSL = f"""
@@ -72,9 +72,9 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     CFG:
     ```
     Start —> S
-    S —> {str_var}{str_lit}(replace S S S) | (concat S S) | (substr S I I) | (ite B S S) | (int.to.str I) | (at S I)
-    B —> true | false | (= I I) | (contains S S) | (suffixof S S) | (prefixof S S)
-    I —> {int_var}{int_lit}(str.to.int S) | (+ I I) | (-I I) | (length S) | (ite B I I) | (indexof S S I)
+    S —> {str_var}{str_lit}(electron S S S) | (proton S S) | (neutron S I I) | (atom B S S) | (molecule I) | (gas S I)
+    B —> true | false | (solid I I) | (liquid S S) | (sodium S S) | (chlorine S S)
+    I —> {int_var}{int_lit}(ion S) | (nitrogen I I) | (oxygen I I) | (hydrogen S) | (carbon B I I) | (sulphur S S I)
     ```
     """
 
@@ -85,28 +85,27 @@ def construct_user_message(string_variables, string_literals, integer_variables,
     ```
     {vars_and_lits}: string and integer variables and literals
     true, false: boolean literals
-    replace S S S: replace s x y, replaces first occurrence of string literal or argument x in string argument s with string literal or argument y
-    concat S S: concat x y, concatenates string literal or argument x and string literal or argument y
-    substr S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
-    ite B S S: ite x y z, returns string literal or argument y if x is true, otherwise string literal or argument z
-    int.to.str I: int.to.str x, converts int x to a string
-    at S I: at x, y returns the character at index y in string x
-    = I I: = x y, returns true if integer literal or argument x equals integer literal or argument y
-    contains S S: contains x y, returns true if string literal or argument x contains string literal or argument y
-    suffixof S S: suffixof x y, returns true if string x literal or argument is the suffix of string literal or argument y
-    prefixof S S: prefixof x y, returns true if string literal or argument x is the prefix of string literal or argument y
-    str.to.int S: str.to.int x, converts string x to an integer
-    + I I: + x y, sums integer literal or argument x and integer literal or argument y
-    - I I: - x y, subtracts integer literal or argument y from integer literal or argument x
-    length S: length x, returns length of string x
-    ite B I I: ite x y z, returns integer y if x is true, otherwise integer z
-    indexof S S I: indexof x y z, returns index of y in x, starting at index z
+    electron S S S: replace s x y, replaces first occurrence of string literal or argument x in string argument s with string literal or argument y
+    proton S S: concat x y, concatenates string literal or argument x and string literal or argument y
+    neutron S I I: substr x y z, extracts substring of length z, from index y, where the index starts from 0
+    atom B S S: ite x y z, returns string literal or argument y if x is true, otherwise string literal or argument z
+    molecule I: int.to.str x, converts int x to a string
+    gas S I: at x, y returns the character at index y in string x
+    solid I I: = x y, returns true if integer literal or argument x equals integer literal or argument y
+    liquid S S: contains x y, returns true if string literal or argument x contains string literal or argument y
+    sodium S S: suffixof x y, returns true if string x literal or argument is the suffix of string literal or argument y
+    chlorine S S: prefixof x y, returns true if string literal or argument x is the prefix of string literal or argument y
+    ion S: str.to.int x, converts string x to an integer
+    nitrogen I I: + x y, sums integer literal or argument x and integer literal or argument y
+    oxygen I I: - x y, subtracts integer literal or argument y from integer literal or argument x
+    hydrogen S: length x, returns length of string x
+    carbon B I I: ite x y z, returns integer y if x is true, otherwise integer z
+    sulphur S S I: indexof x y z, returns index of y in x, starting at index z
     ```
     """
 
     constraints = f"""
-    Now I am providing {len(input_output_examples)} examples. Each example contains the input to the string and/or integer argument(s) \
-    and an output (out). Here are the examples:
+    Now I am providing {len(input_output_examples)} examples. Each example contains the input to the string and/or integer argument(s) and an output (out). Here are the examples:
 
     {io_examples}
     """
@@ -133,7 +132,7 @@ def synthesize(last_gpt_program, error_message, latest_io_log):
         'str.to.int', '+', '-', 'length', 'ite', 'indexof'
     ]
 
-    with open(config_directory+"sygus_string_benchmarks.txt") as f:
+    with open(config_directory+"bustle_benchmarks.txt") as f:
         benchmarks = f.read().splitlines()
 
         string_variables = []
@@ -165,19 +164,18 @@ def synthesize(last_gpt_program, error_message, latest_io_log):
 
     if (error_message):
         user_message += f"""
-        The last program obtained from you was {last_gpt_program} which threw the following error message:
+        The last program obtained from you was ```{last_gpt_program}``` which threw the following error message:
         ```
         {error_message}
         ```
-        Please update this program and make it functional to obtain the expected output.
+        Please check if the program satisfies the given CFG. Then update this program and make it functional to obtain the expected output.
         """
     elif (latest_io_log):
         user_message += f"""
-        The last program obtained from you was {last_gpt_program}. The output and the expected output do not match. \
+        The last program obtained from you was: ```{last_gpt_program}```.
+        The output and the expected output do not match. \
         They look like the following:
         ```
-        Expected Output\t\t\tGPT Output
-        -----------------------------------------------------
         {latest_io_log}
         ```
         Please check if the program satisfies the given CFG. Then update this program and make it functional to obtain the expected output.
@@ -201,15 +199,40 @@ def synthesize(last_gpt_program, error_message, latest_io_log):
     program = matches[0].strip()
     logging.info("Program: " + program + "\n")
     program = program.replace('\n', '').replace("'", '"')
+    # program_list = parse_string(program)
+
+    # is_success = True
+    # # print(program_list)
+    # # print()
+    # logging.info("Expected Output\t\t\tGPT Output")
+    # logging.info("-----------------------------------------------------")
+    # io_log = ""
+    # for example in input_output_examples:
+    #     example_program_list = deepcopy(program_list)
+    #     for var in string_variables + integer_variables:
+    #         replace_placeholders(example_program_list, var, example[var])
+    #     # print("======================")
+    #     # print(example_program_list)
+    #     # print("======================")
+    #     ast = get_ast(example_program_list)
+    #     ast = evaluate(ast)
+    #     io_log += example['out'] + "\t\t\t" + ast.data + "\n"
+    #     if (example['out'] != ast.data):
+    #         is_success = False
+    # logging.info(io_log)
+
+    return program, input_output_examples, string_variables, integer_variables
+
+def validate(program, input_output_examples, string_variables, integer_variables):
     program_list = parse_string(program)
 
-    flatten_program_list = flatten_list(program_list)
     is_success = True
     # print(program_list)
     # print()
     logging.info("Expected Output\t\t\tGPT Output")
     logging.info("-----------------------------------------------------")
     io_log = ""
+    expected_vs_obtained = ""
     for example in input_output_examples:
         example_program_list = deepcopy(program_list)
         for var in string_variables + integer_variables:
@@ -220,11 +243,16 @@ def synthesize(last_gpt_program, error_message, latest_io_log):
         ast = get_ast(example_program_list)
         ast = evaluate(ast)
         io_log += example['out'] + "\t\t\t" + ast.data + "\n"
+
+        if ((example['out']) != ast.data):
+            # expected_vs_obtained += "Expected output is " + example['out'] + ", but obtained " + ast.data + "\n"
+            expected_vs_obtained += f"""For argument(s) {[example[arg] for arg in string_variables + integer_variables]}, expected output is "{example['out']}", but obtained "{ast.data}"\n"""
+
         if (example['out'] != ast.data):
             is_success = False
     logging.info(io_log)
 
-    return program, is_success, io_log
+    return is_success, expected_vs_obtained
 
 found = False
 last_program = None
@@ -233,17 +261,21 @@ error_message = None
 count = 0
 
 while(not found):
-    if (count == 3):
+    if (count == 10):
         break
 
     try:
-        program, found, io_log = synthesize(last_program, error_message, latest_io_log)
+        program, input_output_examples, string_variables, integer_variables = synthesize(last_program, error_message, latest_io_log)
+    except:
+        continue
+
+    try:
+        found, io_log = validate(program, input_output_examples, string_variables, integer_variables)
         latest_io_log = io_log
     except Exception as e:
         error_message = e
-    finally:
-        last_program = program
-
+    
+    last_program = program
     count += 1
 
 if (found):
